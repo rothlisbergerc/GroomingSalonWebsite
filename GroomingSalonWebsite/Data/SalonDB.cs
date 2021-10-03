@@ -9,9 +9,11 @@ namespace GroomingSalonWebsite.Data
 {
     static public class SalonDB
     {
-        public async static Task<int> getAllCustomers(SalonContext _context)
+        public async static Task<List<Customer>> getAllCustomers(SalonContext _context)
         {
-            return await (from c in _context.Customers select c).CountAsync();
+            return await (from c in _context.Customers 
+                          orderby c.LastName ascending
+                          select c).ToListAsync();
         }
 
         public async static Task<Customer> addCustomerAsync(SalonContext _context, Customer c)

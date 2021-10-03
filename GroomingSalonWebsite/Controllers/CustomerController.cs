@@ -15,9 +15,10 @@ namespace GroomingSalonWebsite.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            List<Customer> customers = await SalonDB.getAllCustomers(_context);
+            return View(customers);
         }
 
         [HttpGet]
