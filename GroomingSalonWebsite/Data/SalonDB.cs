@@ -13,5 +13,12 @@ namespace GroomingSalonWebsite.Data
         {
             return await (from c in _context.Customers select c).CountAsync();
         }
+
+        public async static Task<Customer> addCustomerAsync(SalonContext _context, Customer c)
+        {
+            _context.Customers.Add(c);
+            await _context.SaveChangesAsync();
+            return c;
+        }
     }
 }
