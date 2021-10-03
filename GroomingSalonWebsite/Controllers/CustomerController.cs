@@ -29,7 +29,11 @@ namespace GroomingSalonWebsite.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(Customer c)
         {
-            await SalonDB.addCustomerAsync(_context, c);
+            if (ModelState.IsValid)
+            {
+                await SalonDB.addCustomerAsync(_context, c);
+                return RedirectToAction("Index");
+            }
             return View();
         }
     }
