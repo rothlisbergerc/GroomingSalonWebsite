@@ -66,26 +66,38 @@
         <label for="inputZip" class="form-label">Zip</label>
         <input type="text" class="form-control" id="inputZip">
     </div>
-    <div class="col-12">
-        <div class="form-check">
+    <div class="col-12" id="servicesCheckBox">
+        @*<div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck">
             <label class="form-check-label" for="gridCheck">
                 Check box
             </label>
+        </div>*@
+
+        <h6>Please choose services:</h6>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">Bath / Brush</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">Spa Package</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+            <label class="form-check-label" for="inlineCheckbox3">Nail Trim</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+            <label class="form-check-label" for="inlineCheckbox4">Nail Dremel</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+            <label class="form-check-label" for="inlineCheckbox5">Teeth Brush</label>
         </div>
     </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-        <label class="form-check-label" for="inlineCheckbox1">1</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-        <label class="form-check-label" for="inlineCheckbox2">2</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-        <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
-    </div>
+
 
     <div class="col">
         <button type="submit" class="btn btn-primary">Make Appointment</button>
