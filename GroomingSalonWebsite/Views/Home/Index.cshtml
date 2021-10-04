@@ -68,13 +68,13 @@
     </div>
     <div class="col-12" id="servicesCheckBox">
         @*<div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-                Check box
-            </label>
-        </div>*@
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check box
+                </label>
+            </div>*@
 
-        <h6>Please choose services:</h6>
+        <h6>Please select services:</h6>
 
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -98,9 +98,17 @@
         </div>
     </div>
 
+    <div class="col">
+        <h6>Please pick an appointment date:</h6>
+        <input type="datetime-local" class="form-control" id="inputApptDate">
+    </div>
+
 
     <div class="col">
         <button type="submit" class="btn btn-primary">Make Appointment</button>
+
+    </div>
+    <div class="col">
         <button type="button" class="btn btn-secondary">Clear</button>
     </div>
 </form>
