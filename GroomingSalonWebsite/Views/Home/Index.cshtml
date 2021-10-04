@@ -16,17 +16,6 @@
         <label for="inputLastName" class="form-label">Last Name</label>
         <input type="text" class="form-control" id="inputLastName">
     </div>
-    <div class="col-md-6">
-        <label for="inputPetName" class="form-label">Pet's Name</label>
-        <input type="text" class="form-control" id="inputPetName">
-    </div>
-    <div class="col-md-6">
-        <label for="inputBreed" class="form-label">Breed</label>
-        <input type="text" class="form-control" id="inputBreed">
-    </div>
-    <div class="col-md-6">
-        <label for="inputBirthday" class="form-label">Pet's Birtday</label>
-        <input type="date" class="form-control" id="inputBirthday">
     </div>
     <div class="col-md-6">
         <label for="inputPhone" class="form-label">Phone Number</label>
@@ -55,15 +44,37 @@
         <label for="inputZip" class="form-label">Zip</label>
         <input type="text" class="form-control" id="inputZip">
     </div>
-    <div class="col-12">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-                Check me out
-            </label>
+    <div class="col-md-6">
+        <label for="inputPetName" class="form-label">Pet's Name</label>
+        <input type="text" class="form-control" id="inputPetName">
+    </div>
+    <div class="col-md-6">
+        <label for="inputBreed" class="form-label">Breed</label>
+        <input type="text" class="form-control" id="inputBreed">
+    </div>
+    <div class="col-md-6">
+        <label for="inputBirthday" class="form-label">Pet's Birtday</label>
+        <input type="date" class="form-control" id="inputBirthday">
+    </div>
+    <div class="col-md-4">
+        <label for="inputWeight" class="form-label">Weight</label>
+        <select id="inputWeight" class="form-select">
+            <option selected>Choose...</option>
+            <option>0-25 lbs</option>
+            <option>25-50 lbs</option>
+            <option>50-75 lbs</option>
+            <option>75-100 lbs</option>
+            <option>100+ lbs</option>
+        </select>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check me out
+                </label>
+            </div>
         </div>
-    </div>
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Make Appointment</button>
-    </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Make Appointment</button>
+        </div>
 </form>
