@@ -1,10 +1,16 @@
 ﻿@model Customer
 
 @{
-    ViewData["Title"] = "View";
+    ViewData["Title"] = "Update" + Model.FirstName + Model.LastName;
+}
+@if(ViewData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @ViewData["Message"]
+    </div>
 }
 
-<h1>Edit Customer</h1>
+<h1>Update @Model.FirstName @Model.LastName</h1>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Update">

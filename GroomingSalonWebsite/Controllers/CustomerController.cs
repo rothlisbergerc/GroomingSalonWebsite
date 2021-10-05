@@ -54,6 +54,8 @@ namespace GroomingSalonWebsite.Controllers
             {
                 _context.Entry(c).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
+
+                ViewData["Message"] = $"{c.FirstName} {c.LastName} updated successfully";
             }
             return View(c);
         }
