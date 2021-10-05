@@ -35,8 +35,7 @@
             <td>@Html.DisplayFor(modelItem => c.PhoneNumber)</td>
             <td>@Html.DisplayFor(modelItem => c.HomeAddress)</td>
             <td>
-                <a asp-action="Edit" asp-route-id="@c.CustomerId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@c.CustomerId">Details</a> |
+                <a asp-action="Update" asp-route-id="@c.CustomerId">Update</a> |
                 <a asp-action="Delete" asp-route-id="@c.CustomerId">Delete</a>
             </td>
         </tr>
