@@ -3,6 +3,7 @@ A scheduling and registration website used by a grooming salon business and it's
 
 ## This website allows users to:
 * Schedule, update, & cancel appointments.
+* Input information about themselves and their pets
 * Select grooming services
 * Obtain information about services, staff, and location / phone number for the salon.
 
