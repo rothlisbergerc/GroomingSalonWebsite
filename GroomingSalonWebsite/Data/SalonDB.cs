@@ -22,5 +22,14 @@ namespace GroomingSalonWebsite.Data
             await _context.SaveChangesAsync();
             return c;
         }
+
+        public static async Task<Customer> getCustomerAsync(SalonContext _context, int custId)
+        {
+            Customer c = await (from customers in _context.Customers
+                                where customers.CustomerId == custId
+                                select customers).SingleAsync();
+
+            return c;
+        }
     }
 }
