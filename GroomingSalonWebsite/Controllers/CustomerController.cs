@@ -59,5 +59,26 @@ namespace GroomingSalonWebsite.Controllers
             }
             return View(c);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            Customer c = await SalonDB.getCustomerAsync(_context, id);
+            return View(c);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            Customer c = await SalonDB.getCustomerAsync(_context, id);
+            _context.Entry(c).State = EntityState.Deleted;
+            await _context.SaveChangesAsync();
+
+            TempData["Message"] = $"{c.FirstName} {c.LastName} was deleted successfully";
+
+
+            return RedirectToAction("Index");
+        }
     }
 }
