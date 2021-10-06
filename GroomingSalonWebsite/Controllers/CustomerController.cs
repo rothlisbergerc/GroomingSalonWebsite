@@ -18,7 +18,7 @@ namespace GroomingSalonWebsite.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            List<Customer> customers = await SalonDB.getAllCustomers(_context);
+            List<Customer> customers = await SalonDB.getAllCustomersAsync(_context);
             return View(customers);
         }
 
