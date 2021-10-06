@@ -1,0 +1,47 @@
+﻿@model IEnumerable<GroomingSalonWebsite.Models.Pet>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Breed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (Pet p in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => p.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => p.Breed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => p.Age)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@p.PetId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@p.PetId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@p.PetId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
