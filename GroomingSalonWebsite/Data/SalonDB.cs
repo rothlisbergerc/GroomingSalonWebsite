@@ -9,7 +9,7 @@ namespace GroomingSalonWebsite.Data
 {
     static public class SalonDB
     {
-        public async static Task<List<Customer>> getAllCustomers(SalonContext _context)
+        public async static Task<List<Customer>> getAllCustomersAsync(SalonContext _context)
         {
             return await (from c in _context.Customers 
                           orderby c.LastName ascending
@@ -30,6 +30,12 @@ namespace GroomingSalonWebsite.Data
                                 select customers).SingleAsync();
 
             return c;
+        }
+
+        public async static Task<List<Pet>> getAllPetsAsync(SalonContext _context)
+        {
+            return await (from p in _context.Pets
+                          select p).ToListAsync();
         }
     }
 }
