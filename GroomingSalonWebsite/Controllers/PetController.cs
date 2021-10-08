@@ -40,9 +40,9 @@ namespace GroomingSalonWebsite.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Update(int petId)
+        public async Task<IActionResult> Update(int id)
         {
-            Pet p = await SalonDB.getPetAsync(_context, petId);
+            Pet p = await SalonDB.getPetAsync(_context, id);
             return View(p);
         }
 
