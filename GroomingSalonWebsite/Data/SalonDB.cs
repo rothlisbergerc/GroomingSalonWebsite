@@ -44,5 +44,13 @@ namespace GroomingSalonWebsite.Data
             await _context.SaveChangesAsync();
             return p;
         }
+
+        public static async Task<Pet> getPetAsync(SalonContext _context, int petId)
+        {
+            Pet p = await (from pets in _context.Pets
+                           where pets.PetId == petId
+                           select pets).SingleAsync();
+            return p;
+        }
     }
 }

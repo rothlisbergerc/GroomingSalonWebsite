@@ -37,8 +37,7 @@
                 @Html.DisplayFor(modelItem => p.Age)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@p.PetId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@p.PetId">Details</a> |
+                <a asp-action="Update" asp-route-id="@p.PetId">Update</a> |
                 <a asp-action="Delete" asp-route-id="@p.PetId">Delete</a>
             </td>
         </tr>
