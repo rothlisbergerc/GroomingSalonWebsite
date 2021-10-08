@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GroomingSalonWebsite.Models;
 using GroomingSalonWebsite.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace GroomingSalonWebsite.Controllers
 {
@@ -36,6 +37,26 @@ namespace GroomingSalonWebsite.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Update(int petId)
+        {
+            Pet p = await SalonDB.getPetAsync(_context, petId);
+            return View(p);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(Pet p)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Entry(p).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                ViewData["Message"] = $"{p.Name} updated successfully";
+            }
+            return View(p);
         }
     }
 }
