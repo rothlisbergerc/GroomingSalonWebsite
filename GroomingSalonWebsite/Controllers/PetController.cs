@@ -20,5 +20,22 @@ namespace GroomingSalonWebsite.Controllers
             List<Pet> pets = await SalonDB.getAllPetsAsync(_context);
             return View(pets);
         }
+
+        [HttpGet]
+        public IActionResult add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(Pet p)
+        {
+            if (ModelState.IsValid)
+            {
+                await SalonDB.addPetAsync(_context, p);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }

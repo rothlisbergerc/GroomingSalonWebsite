@@ -37,5 +37,12 @@ namespace GroomingSalonWebsite.Data
             return await (from p in _context.Pets
                           select p).ToListAsync();
         }
+
+        public async static Task<Pet> addPetAsync(SalonContext _context, Pet p)
+        {
+            _context.Pets.Add(p);
+            await _context.SaveChangesAsync();
+            return p;
+        }
     }
 }
