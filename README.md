@@ -18,6 +18,6 @@ A scheduling and registration website used by a grooming salon business and it's
 
 ## Screenshots
 
-**Disclaimer: This project is a work-in-progress, Screenshots will be updated to reflect the most current version**
+**Disclaimer: This project is a work-in-progress. Screenshots will be updated to reflect the most current version**
 
 ![image](https://user-images.githubusercontent.com/77075506/135935052-4f552573-ea69-42a7-a754-1381037925af.png)
