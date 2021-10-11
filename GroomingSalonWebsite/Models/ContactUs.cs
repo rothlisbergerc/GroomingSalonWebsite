@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace GroomingSalonWebsite.Models
 {
-    public class Contact
+    public class ContactUs
     {
+        public int messageId { get; set; }
+
         public string name { get; set; }
 
         public string email { get; set; }
