@@ -14,5 +14,7 @@ namespace GroomingSalonWebsite.Data
         public DbSet<Customer> Customers { get; set; }
 
         public DbSet<Pet> Pets { get; set; }
+
+        public DbSet<ContactUs> ContactUs { get; set; }
     }
 }

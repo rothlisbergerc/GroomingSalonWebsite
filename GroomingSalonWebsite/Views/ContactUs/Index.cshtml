@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ContactUs>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.message)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (ContactUs cm in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => cm.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => cm.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => cm.subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => cm.message)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@cm.messageId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@cm.messageId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@cm.messageId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
