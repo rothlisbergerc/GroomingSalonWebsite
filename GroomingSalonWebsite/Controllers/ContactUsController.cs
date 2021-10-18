@@ -21,5 +21,21 @@ namespace GroomingSalonWebsite.Controllers
             List<ContactUs> Messages = await SalonDB.getContactMessageAsync(_context);
             return View(Messages);
         }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> Add(ContactUs cm)
+        {
+            if(ModelState.IsValid)
+            {
+                await SalonDB.addContactMessage(_context, cm);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }

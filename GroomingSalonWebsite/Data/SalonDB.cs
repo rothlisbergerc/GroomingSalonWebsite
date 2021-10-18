@@ -9,14 +9,14 @@ namespace GroomingSalonWebsite.Data
 {
     static public class SalonDB
     {
-        public async static Task<List<Customer>> getAllCustomersAsync(SalonContext _context)
+        public static async Task<List<Customer>> getAllCustomersAsync(SalonContext _context)
         {
             return await (from c in _context.Customers 
                           orderby c.LastName ascending
                           select c).ToListAsync();
         }
 
-        public async static Task<Customer> addCustomerAsync(SalonContext _context, Customer c)
+        public static async Task<Customer> addCustomerAsync(SalonContext _context, Customer c)
         {
             _context.Customers.Add(c);
             await _context.SaveChangesAsync();
@@ -32,13 +32,13 @@ namespace GroomingSalonWebsite.Data
             return c;
         }
 
-        public async static Task<List<Pet>> getAllPetsAsync(SalonContext _context)
+        public static async Task<List<Pet>> getAllPetsAsync(SalonContext _context)
         {
             return await (from p in _context.Pets
                           select p).ToListAsync();
         }
 
-        public async static Task<Pet> addPetAsync(SalonContext _context, Pet p)
+        public static async Task<Pet> addPetAsync(SalonContext _context, Pet p)
         {
             _context.Pets.Add(p);
             await _context.SaveChangesAsync();
@@ -57,6 +57,13 @@ namespace GroomingSalonWebsite.Data
         {
             return await (from cm in _context.ContactUs
                           select cm).ToListAsync();
+        }
+
+        public static async Task<ContactUs> addContactMessage(SalonContext _context, ContactUs cm)
+        {
+            _context.ContactUs.Add(cm);
+            await _context.SaveChangesAsync();
+            return cm;
         }
     }
 }
