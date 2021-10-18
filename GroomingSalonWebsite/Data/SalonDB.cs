@@ -52,11 +52,11 @@ namespace GroomingSalonWebsite.Data
                            select pets).SingleAsync();
             return p;
         }
-
+        
         public static async Task<ContactUs> getContactMessageAsync(SalonContext _context)
         {
             return await (from cm in _context.ContactUs
-                                select cm).ToListAsync();
+                          select cm).ToListAsync();
         }
     }
 }
