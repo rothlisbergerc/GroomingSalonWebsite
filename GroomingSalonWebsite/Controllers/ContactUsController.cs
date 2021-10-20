@@ -23,19 +23,37 @@ namespace GroomingSalonWebsite.Controllers
         }
 
         [HttpGet]
-        public IActionResult Add()
+        public IActionResult ContactUs()
         {
             return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> Add(ContactUs cm)
         {
             if(ModelState.IsValid)
             {
                 await SalonDB.addContactMessage(_context, cm);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View();
         }
+        /*
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        
+        public async Task<IActionResult> Add(ContactUs cm)
+        {
+            if (ModelState.IsValid)
+            {
+                await SalonDB.addContactMessage(_context, cm);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }*/
     }
 }
