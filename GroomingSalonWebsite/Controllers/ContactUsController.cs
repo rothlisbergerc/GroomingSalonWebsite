@@ -22,11 +22,13 @@ namespace GroomingSalonWebsite.Controllers
             return View(Messages);
         }
 
+        [HttpGet]
         public IActionResult ContactUs()
         {
             return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> Add(ContactUs cm)
         {
             if(ModelState.IsValid)
@@ -36,14 +38,14 @@ namespace GroomingSalonWebsite.Controllers
             }
             return View();
         }
-
+        /*
         [HttpGet]
         public IActionResult Add()
         {
             return View();
         }
 
-        /*
+        
         public async Task<IActionResult> Add(ContactUs cm)
         {
             if (ModelState.IsValid)
