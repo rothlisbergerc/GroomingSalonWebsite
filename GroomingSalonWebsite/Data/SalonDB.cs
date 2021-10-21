@@ -65,5 +65,13 @@ namespace GroomingSalonWebsite.Data
             await _context.SaveChangesAsync();
             return cm;
         }
+
+        public static async Task<ContactUs> getMessageAsync(SalonContext _context, int cmId)
+        {
+            ContactUs message = await (from cm in _context.ContactUs
+                                       where cm.messageId == cmId
+                                       select cm).SingleAsync();
+            return message;
+        }
     }
 }
