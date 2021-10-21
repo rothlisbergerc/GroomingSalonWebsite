@@ -56,6 +56,24 @@ namespace GroomingSalonWebsite.Controllers
 
             return RedirectToAction("Index","Home");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Update(int id)
+        {
+            ContactUs cm = await SalonDB.getMessageAsync(_context, id);
+            return View(cm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(ContactUs cm)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Entry(cm).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+            }
+            return View(cm);
+        }
         /*
         [HttpGet]
         public IActionResult Add()
