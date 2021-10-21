@@ -47,6 +47,7 @@ namespace GroomingSalonWebsite.Controllers
         }
 
         [HttpPost]
+        [ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             ContactUs cm = await SalonDB.getMessageAsync(_context, id);
