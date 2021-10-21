@@ -38,6 +38,24 @@ namespace GroomingSalonWebsite.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            ContactUs cm = await SalonDB.getMessageAsync(_context, id);
+            return View(cm);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            ContactUs cm = await SalonDB.getMessageAsync(_context, id);
+            _context.Entry(cm).State = EntityState.Deleted;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index","Home");
+        }
         /*
         [HttpGet]
         public IActionResult Add()
