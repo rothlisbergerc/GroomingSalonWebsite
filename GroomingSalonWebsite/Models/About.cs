@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GroomingSalonWebsite.Models
 {
-    [Keyless]
     public class About
     {
+        public int aboutId { get; set; }
         public String aboutText { get; set; }
     }
 }
