@@ -18,5 +18,7 @@ namespace GroomingSalonWebsite.Data
         public DbSet<ContactUs> ContactUs { get; set; }
 
         public DbSet<GroomingSalonWebsite.Models.About> About { get; set; }
+
+        public DbSet<GroomingSalonWebsite.Models.Appointment> Appointment { get; set; }
     }
 }
