@@ -4,14 +4,16 @@ using GroomingSalonWebsite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroomingSalonWebsite.Migrations
 {
     [DbContext(typeof(SalonContext))]
-    partial class SalonContextModelSnapshot : ModelSnapshot
+    [Migration("20211102231025_AppointmentClassRestructure")]
+    partial class AppointmentClassRestructure
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,46 +43,46 @@ namespace GroomingSalonWebsite.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ApptAddress1")
+                    b.Property<string>("Address1")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ApptAddress2")
+                    b.Property<string>("Address2")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ApptCity")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ApptDate")
+                    b.Property<DateTime>("AppointmentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ApptFirstName")
+                    b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ApptLastName")
+                    b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ApptPetBirthDay")
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PetBirthday")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ApptPetBreed")
+                    b.Property<string>("PetBreed")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ApptPetName")
+                    b.Property<string>("PetName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ApptPetWeight")
+                    b.Property<int>("PetWeight")
                         .HasColumnType("int");
 
-                    b.Property<string>("ApptPhoneNumber")
+                    b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("ApptServices")
+                    b.Property<bool>("Services")
                         .HasColumnType("bit");
 
-                    b.Property<string>("ApptState")
+                    b.Property<string>("State")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ApptZipcode")
+                    b.Property<int>("Zipcode")
                         .HasColumnType("int");
 
                     b.HasKey("AppointmentId");
