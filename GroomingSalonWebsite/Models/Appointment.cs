@@ -11,17 +11,17 @@ namespace GroomingSalonWebsite.Models
         [Key]
         public int AppointmentId { get; set; }
 
-        public string FirstName { get; set; }
+        public string AppointmentFirstName { get; set; }
 
-        public string LastName { get; set; }
+        public string AppointmentLastName { get; set; }
 
-        public string PetName { get; set; }
+        public string AppointmentPetName { get; set; }
 
-        public string PetBreed { get; set; }
+        public string AppointmentPetBreed { get; set; }
 
-        public DateTime PetBirthday { get; set; }
+        public DateTime AppointmentPetBirthday { get; set; }
 
-        public int PetWeight { get; set; }
+        public int AppointmentPetWeight { get; set; }
 
         public string PhoneNumber { get; set; }
 
@@ -41,6 +41,11 @@ namespace GroomingSalonWebsite.Models
         public bool Services { get; set; }
 
         public DateTime AppointmentDate { get; set; }
+
+        public override string ToString()
+        {
+            return AppointmentDate + " for " + AppointmentFirstName + AppointmentLastName + " and " + AppointmentPetName;
+        }
 
         /*
         public  int AppointmentId { get; set; }
