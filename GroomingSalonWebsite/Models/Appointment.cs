@@ -11,40 +11,40 @@ namespace GroomingSalonWebsite.Models
         [Key]
         public int AppointmentId { get; set; }
 
-        public string AppointmentFirstName { get; set; }
+        public string ApptFirstName { get; set; }
 
-        public string AppointmentLastName { get; set; }
+        public string ApptLastName { get; set; }
 
-        public string AppointmentPetName { get; set; }
+        public string ApptPetName { get; set; }
 
-        public string AppointmentPetBreed { get; set; }
+        public string ApptPetBreed { get; set; }
 
-        public DateTime AppointmentPetBirthday { get; set; }
+        public DateTime ApptPetBirthDay { get; set; }
 
-        public int AppointmentPetWeight { get; set; }
+        public int ApptPetWeight { get; set; }
 
-        public string PhoneNumber { get; set; }
+        public string ApptPhoneNumber { get; set; }
 
-        public string Address1 { get; set; }
+        public string ApptAddress1 { get; set; }
 
         //Does it need this nullable enable line? Creates screen squiggle without it.
         //#nullable enable
-        public string? Address2 { get; set; }
+        public string? ApptAddress2 { get; set; }
 
-        public string City { get; set; }
+        public string ApptCity { get; set; }
 
-        public string State { get; set; }
+        public string ApptState { get; set; }
 
         //Needs to be an int because most zipcodes consist of 5 digits.
-        public int Zipcode { get; set; }
+        public int ApptZipcode { get; set; }
 
-        public bool Services { get; set; }
+        public bool ApptServices { get; set; }
 
-        public DateTime AppointmentDate { get; set; }
+        public DateTime ApptDate { get; set; }
 
         public override string ToString()
         {
-            return AppointmentDate + " for " + AppointmentFirstName + AppointmentLastName + " and " + AppointmentPetName;
+            return ApptDate + " for " + ApptFirstName + ApptLastName + " and " + ApptPetName;
         }
 
         /*
