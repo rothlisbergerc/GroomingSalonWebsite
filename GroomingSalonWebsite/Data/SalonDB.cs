@@ -52,6 +52,27 @@ namespace GroomingSalonWebsite.Data
                            select pets).SingleAsync();
             return p;
         }
+
+        public static async Task<List<Appointment>> getAllAppointmentsAsync(SalonContext _context)
+        {
+            return await (from ap in _context.Appointment
+                          select ap).ToListAsync();
+        }
+
+        public static async Task<Appointment> addAppointmentAsync(SalonContext _context, Appointment ap)
+        {
+            _context.Appointment.Add(ap);
+            await _context.SaveChangesAsync();
+            return ap;
+        }
+
+        public static async Task<Appointment> getAppointmnetAsync(SalonContext _context, int appointmentId)
+        {
+            Appointment ap = await (from appointments in _context.Appointment
+                                    where appointments.AppointmentId == appointmentId
+                                    select appointments).SingleAsync();
+            return ap;
+        }
         
         public static async Task<List<ContactUs>> getContactMessageAsync(SalonContext _context)
         {
