@@ -1,66 +1,73 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model GroomingSalonWebsite.Models.Appointment
+
+@{
+    ViewData["Title"] = "Create";
 }
 
 <div class="text-center">
     <h1 class="display-4">Schedule an appointment with us!</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>
+        Learn about
+        <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.
+    </p>
 </div>
 
-<form class="row g-3">
-    <div class="col-md-6">
-        <label for="inputFirstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="inputFirstName">
-    </div>
-    <div class="col-md-6">
-        <label for="inputLastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="inputLastName">
-    </div>
-    <div class="col-md-6">
-        <label for="inputPetName" class="form-label">Pet Name</label>
-        <input type="text" class="form-control" id="inputPetName">
-    </div>
-    <div class="col-md-6">
-        <label for="inputBreed" class="form-label">Pet Breed</label>
-        <input type="text" class="form-control" id="inputBreed">
-    </div>
-    <div class="col-md-6">
-        <label for="inputBirthday" class="form-label">Pet Birthday</label>
-        <input type="date" class="form-control" id="inputBirthday">
-    </div>
-    <div class="col-md-4">
-        <label for="inputWeight" class="form-label">Pet Weight</label>
-        <input type="text" class="form-control" id="inputWeight"/>
-        @*<h6>Pet Weight</h6>
-        <select id="inputWeight" class="form-select">
-            <option selected>Choose...</option>
-            <option>0-25 lbs</option>
-            <option>25-50 lbs</option>
-            <option>50-75 lbs</option>
-            <option>75-100 lbs</option>
-            <option>100+ lbs</option>
-        </select>*@
-    </div>
 
+<form asp-action="Add" class="row g-3">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="col-md-6">
-        <label for="inputPhone" class="form-label">Phone Number</label>
-        <input type="text" class="form-control" id="inputPhone">
-    </div>
-    <div class="col-12">
-        <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-    <div class="col-12">
-        <label for="inputAddress2" class="form-label">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        <label asp-for="ApptFirstName" class="control-label">First Name</label>
+        <input asp-for="ApptFirstName" class="form-control" />
+        <span asp-validation-for="ApptFirstName" class="text-danger"></span>
     </div>
     <div class="col-md-6">
-        <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity">
+        <label asp-for="ApptLastName" class="control-label">Last Name</label>
+        <input asp-for="ApptLastName" class="form-control" />
+        <span asp-validation-for="ApptLastName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="ApptPetName" class="control-label">Pet Name</label>
+        <input asp-for="ApptPetName" class="form-control" />
+        <span asp-validation-for="ApptPetName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="ApptPetBreed" class="control-label">Pet Breed</label>
+        <input asp-for="ApptPetBreed" class="form-control" />
+        <span asp-validation-for="ApptPetBreed" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="ApptPetBirthDay" class="control-label">Pet Birthday</label>
+        <input asp-for="ApptPetBirthDay" class="form-control" />
+        <span asp-validation-for="ApptPetBirthDay" class="text-danger"></span>
     </div>
     <div class="col-md-4">
-        <h6>State</h6>
-        <select id="inputState" class="form-select">
+        <label asp-for="ApptPetWeight" class="control-label">Pet Weight</label>
+        <input asp-for="ApptPetWeight" class="form-control" />
+        <span asp-validation-for="ApptPetWeight" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="ApptPhoneNumber" class="control-label">Phone Number</label>
+        <input asp-for="ApptPhoneNumber" class="form-control" />
+        <span asp-validation-for="ApptPhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <label asp-for="ApptAddress1" class="control-label">Address</label>
+        <input asp-for="ApptAddress1" class="form-control" />
+        <span asp-validation-for="ApptAddress1" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <label asp-for="ApptAddress2" class="control-label">Address 2</label>
+        <input asp-for="ApptAddress2" class="form-control" />
+        <span asp-validation-for="ApptAddress2" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="ApptCity" class="control-label">City</label>
+        <input asp-for="ApptCity" class="form-control" />
+        <span asp-validation-for="ApptCity" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label asp-for="ApptState" class="control-label">State</label>
+        <select asp-for="ApptState" class="form-control">
             <option selected>Choose...</option>
             <option>Alabama</option>
             <option>Alaska</option>
@@ -115,50 +122,58 @@
             <option>Wisconsin</option>
             <option>Wyoming</option>
         </select>
+        <span asp-validation-for="ApptState" class="text-danger"></span>
     </div>
     <div class="col-md-2">
-        <label for="inputZip" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
+        <label asp-for="ApptZipcode" class="control-label">Zip</label>
+        <input asp-for="ApptZipcode" class="form-control" />
+        <span asp-validation-for="ApptZipcode" class="text-danger"></span>
     </div>
 
     <div class="col-12" id="servicesCheckBox">
 
-        <h6>Please select services:</h6>
-
+        <h6>Please select a service:</h6>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">Bath / Brush</label>
+            <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox1" value="option1" />
+            <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox1">Bath / Brush</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-            <label class="form-check-label" for="inlineCheckbox2">Spa Package</label>
+            <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox2" value="option2" />
+            <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox2">Spa Package</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-            <label class="form-check-label" for="inlineCheckbox3">Nail Trim</label>
+            <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox3" value="option3" />
+            <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox3">Nail Trim</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-            <label class="form-check-label" for="inlineCheckbox4">Nail Dremel</label>
+            <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox4" value="option4" />
+            <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox4">Nail Dremel</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-            <label class="form-check-label" for="inlineCheckbox5">Teeth Brush</label>
+            <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox5" value="option5" />
+            <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox5">Teeth Brush</label>
         </div>
     </div>
-
     <div class="col">
-        <h6>Please pick an appointment date:</h6>
-        <input type="datetime-local" class="form-control" id="inputApptDate">
+        <label asp-for="ApptDate" class="control-label">Please pick an appointment date</label>
+        <input asp-for="ApptDate" class="form-control" type="datetime-local" id="inputApptDate" />
+        <span asp-validation-for="ApptDate" class="text-danger"></span>
     </div>
-
 
     <div class="align-content-lg-stretch">
         <div class="col">
             <h6>Select:</h6>
-            <button type="submit" class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="AppointmentConfirmation" >Make Appointment</button>
+            <button type="submit" class="btn btn-info">Submit</button>
+            @*<input type="submit" class="btn btn-primary" value="Make Appointment">/>*@
             <button type="button" class="btn btn-secondary">Clear</button>
         </div>
     </div>
-    
 </form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
