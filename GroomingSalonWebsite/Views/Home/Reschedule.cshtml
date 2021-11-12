@@ -4,47 +4,48 @@
     ViewData["Title"] = "Reschedule";
 }
 
-<h1>Reschedule</h1>
+<div class="text-center">
+    <h1 class="display-4">Need to make a change?</h1>   
+    <p>Reschedule, update, or cancel your appointment</p>
+</div>
 
-<h4>Appointment</h4>
 <hr />
+
 <div class="row">
+
     <div class="col-md-4">
         <form asp-action="Reschedule">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
             <div class="form-group">
-                <label asp-for="ApptDate" class="control-label"></label>
-                <input asp-for="ApptDate" class="form-control" />
-                <span asp-validation-for="ApptDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApptPhoneNumber" class="control-label"></label>
+                <label asp-for="ApptPhoneNumber" class="control-label">Phone number</label>
                 <input asp-for="ApptPhoneNumber" class="form-control" />
-                <span asp-validation-for="ApptPhoneNumber" class="text-danger"></span>
+                <span asp-validation-for="ApptPhoneNumber" class="text-danger"></span>               
             </div>
-            <div class="form-group">
-                <label asp-for="ApptFirstName" class="control-label"></label>
-                <input asp-for="ApptFirstName" class="form-control" />
-                <span asp-validation-for="ApptFirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApptLastName" class="control-label"></label>
-                <input asp-for="ApptLastName" class="form-control" />
-                <span asp-validation-for="ApptLastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApptPetName" class="control-label"></label>
-                <input asp-for="ApptPetName" class="form-control" />
-                <span asp-validation-for="ApptPetName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="text-center">
+    @*  The appointment information should appear here if an appointment is found.
+        If there is no appointment found, display "No appointment found for this phone number."
+    *@
+    <p>Appointment information placeholder</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Reschedule">      
+            @*Buttons disabled until appointment information has been found*@
+            <div>
+                <button type="submit" class="btn btn-info disabled">Reschedule</button>
+                <button type="button" class="btn btn-secondary disabled">Update</button>
+                <button type="button" class="btn btn-danger disabled">Cancel</button>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
