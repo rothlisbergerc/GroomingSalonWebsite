@@ -17,26 +17,32 @@
         <form asp-action="Reschedule">
             
             <div class="form-group">
-                <label asp-for="ApptPhoneNumber" class="control-label">Phone number</label>
+                <label asp-for="ApptPhoneNumber" class="control-label">Please Enter Phone number</label>
                 <input asp-for="ApptPhoneNumber" class="form-control" />
                 <span asp-validation-for="ApptPhoneNumber" class="text-danger"></span>               
             </div>
+        </form>
+    </div>
+</div>
 
-            @*  The appointment information should appear here if an appointment is found.
-                If there is no appointment found, display "No appointment found for this phone number."
-            *@
+<div class="text-center">
+    @*  The appointment information should appear here if an appointment is found.
+        If there is no appointment found, display "No appointment found for this phone number."
+    *@
+    <p>Appointment information placeholder</p>
+</div>
 
-             <div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Reschedule">       
+            <div>
                 <button type="submit" class="btn btn-info">Reschedule</button>
                 <button type="button" class="btn btn-secondary">Update</button>
                 <button type="button" class="btn btn-danger">Cancel</button>
             </div>
-
-            <div class="align-content-lg-stretch">
-
-            
-    </div>
         </form>
     </div>
 </div>
+
+
 
