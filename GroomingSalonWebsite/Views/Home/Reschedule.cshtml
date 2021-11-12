@@ -5,38 +5,29 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Need to make a change?</h1>
+    <h1 class="display-4">Need to make a change?</h1>   
+    <p>Reschedule, update, or cancel your appointment</p>
 </div>
 
 <hr />
+    <div class="text-center">
+        <p>Please enter in the phone number associated with your appointment</p>
+    </div>
 <div class="row">
+
     <div class="col-md-4">
         <form asp-action="Reschedule">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+@*            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ApptDate" class="control-label"></label>
                 <input asp-for="ApptDate" class="form-control" />
                 <span asp-validation-for="ApptDate" class="text-danger"></span>
-            </div>
+            </div>*@
+            
             <div class="form-group">
-                <label asp-for="ApptPhoneNumber" class="control-label">Phone Number</label>
+                <label asp-for="ApptPhoneNumber" class="control-label">Phone number</label>
                 <input asp-for="ApptPhoneNumber" class="form-control" />
                 <span asp-validation-for="ApptPhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApptFirstName" class="control-label"></label>
-                <input asp-for="ApptFirstName" class="form-control" />
-                <span asp-validation-for="ApptFirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApptLastName" class="control-label"></label>
-                <input asp-for="ApptLastName" class="form-control" />
-                <span asp-validation-for="ApptLastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ApptPetName" class="control-label"></label>
-                <input asp-for="ApptPetName" class="form-control" />
-                <span asp-validation-for="ApptPetName" class="text-danger"></span>
             </div>
 
             <div class="align-content-lg-stretch">
@@ -50,9 +41,5 @@
     </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
