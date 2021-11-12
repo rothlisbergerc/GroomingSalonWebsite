@@ -37,9 +37,16 @@
                 <input asp-for="ApptPetName" class="form-control" />
                 <span asp-validation-for="ApptPetName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="align-content-lg-stretch">
+
+            <div class="col">
+                <h6>Select:</h6>
+                <button type="submit" class="btn btn-info">Reschedule</button>
+                <button type="button" class="btn btn-secondary">Update</button>
+                <button type="button" class="btn btn-danger">Cancel</button>
             </div>
+    </div>
         </form>
     </div>
 </div>
