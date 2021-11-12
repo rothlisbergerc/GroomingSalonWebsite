@@ -17,10 +17,12 @@
         <form asp-action="Reschedule">
             
             <div class="form-group">
-                <label asp-for="ApptPhoneNumber" class="control-label">Please Enter Phone number</label>
+                <label asp-for="ApptPhoneNumber" class="control-label">Phone number</label>
                 <input asp-for="ApptPhoneNumber" class="form-control" />
                 <span asp-validation-for="ApptPhoneNumber" class="text-danger"></span>               
             </div>
+
+            <button type="submit" class="btn btn-info">Submit</button>
         </form>
     </div>
 </div>
@@ -34,11 +36,12 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Reschedule">       
+        <form asp-action="Reschedule">      
+            @*Buttons disabled until appointment information has been found*@
             <div>
-                <button type="submit" class="btn btn-info">Reschedule</button>
-                <button type="button" class="btn btn-secondary">Update</button>
-                <button type="button" class="btn btn-danger">Cancel</button>
+                <button type="submit" class="btn btn-info disabled">Reschedule</button>
+                <button type="button" class="btn btn-secondary disabled">Update</button>
+                <button type="button" class="btn btn-danger disabled">Cancel</button>
             </div>
         </form>
     </div>
