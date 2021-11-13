@@ -3,168 +3,171 @@
 @{
     ViewData["Title"] = "Create";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Schedule an appointment with us!</h1>
-</div>
-
-
-<form asp-action="Add" class="row g-3">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="col-md-6">
-        <label asp-for="ApptFirstName" class="control-label">First Name</label>
-        <input asp-for="ApptFirstName" class="form-control" />
-        <span asp-validation-for="ApptFirstName" class="text-danger"></span>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="ApptLastName" class="control-label">Last Name</label>
-        <input asp-for="ApptLastName" class="form-control" />
-        <span asp-validation-for="ApptLastName" class="text-danger"></span>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="ApptPetName" class="control-label">Pet Name</label>
-        <input asp-for="ApptPetName" class="form-control" />
-        <span asp-validation-for="ApptPetName" class="text-danger"></span>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="ApptPetBreed" class="control-label">Pet Breed</label>
-        <input asp-for="ApptPetBreed" class="form-control" />
-        <span asp-validation-for="ApptPetBreed" class="text-danger"></span>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="ApptPetBirthDay" class="control-label">Pet Birthday</label>
-        <input asp-for="ApptPetBirthDay" class="form-control" />
-        <span asp-validation-for="ApptPetBirthDay" class="text-danger"></span>
-    </div>
-    <div class="col-md-4">
-        <label asp-for="ApptPetWeight" class="control-label">Pet Weight</label>
-        <input asp-for="ApptPetWeight" class="form-control" />
-        <span asp-validation-for="ApptPetWeight" class="text-danger"></span>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="ApptPhoneNumber" class="control-label">Phone Number</label>
-        <input asp-for="ApptPhoneNumber" class="form-control" />
-        <span asp-validation-for="ApptPhoneNumber" class="text-danger"></span>
-    </div>
-    <div class="col-12">
-        <label asp-for="ApptAddress1" class="control-label">Address</label>
-        <input asp-for="ApptAddress1" class="form-control" />
-        <span asp-validation-for="ApptAddress1" class="text-danger"></span>
-    </div>
-    <div class="col-12">
-        <label asp-for="ApptAddress2" class="control-label">Address 2</label>
-        <input asp-for="ApptAddress2" class="form-control" />
-        <span asp-validation-for="ApptAddress2" class="text-danger"></span>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="ApptCity" class="control-label">City</label>
-        <input asp-for="ApptCity" class="form-control" />
-        <span asp-validation-for="ApptCity" class="text-danger"></span>
-    </div>
-    <div class="col-md-4">
-        <label asp-for="ApptState" class="control-label">State</label>
-        <select asp-for="ApptState" class="form-control">
-            <option selected>Choose...</option>
-            <option>Alabama</option>
-            <option>Alaska</option>
-            <option>Arizona</option>
-            <option>Arkansas</option>
-            <option>California</option>
-            <option>Colorado</option>
-            <option>Connecticut</option>
-            <option>Delaware</option>
-            <option>District of Columbia</option>
-            <option>Florida</option>
-            <option>Georgia</option>
-            <option>Hawaii</option>
-            <option>Idaho</option>
-            <option>Illinois</option>
-            <option>Indiana</option>
-            <option>Iowa</option>
-            <option>Kansas</option>
-            <option>Kentucky</option>
-            <option>Louisiana</option>
-            <option>Maine</option>
-            <option>Maryland</option>
-            <option>Massachusetts</option>
-            <option>Michigan</option>
-            <option>Minnesota</option>
-            <option>Mississippi</option>
-            <option>Missouri</option>
-            <option>Montana</option>
-            <option>Nebraska</option>
-            <option>Nevada</option>
-            <option>New Hampshire</option>
-            <option>New Jersey</option>
-            <option>New Mexico</option>
-            <option>New York</option>
-            <option>North Carolina</option>
-            <option>North Dakota</option>
-            <option>Ohio</option>
-            <option>Oklahoma</option>
-            <option>Oregon</option>
-            <option>Pennsylvania</option>
-            <option>Puerto Rico</option>
-            <option>Rhode Island</option>
-            <option>South Carolina</option>
-            <option>South Dakota</option>
-            <option>Tennessee</option>
-            <option>Texas</option>
-            <option>Utah</option>
-            <option>Vermont</option>
-            <option>Virginia</option>
-            <option>Washington</option>
-            <option>West Virginia</option>
-            <option>Wisconsin</option>
-            <option>Wyoming</option>
-        </select>
-        <span asp-validation-for="ApptState" class="text-danger"></span>
-    </div>
-    <div class="col-md-2">
-        <label asp-for="ApptZipcode" class="control-label">Zip</label>
-        <input asp-for="ApptZipcode" class="form-control" />
-        <span asp-validation-for="ApptZipcode" class="text-danger"></span>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Schedule an appointment with us!</h1>
     </div>
 
-    <div class="col-12" id="servicesCheckBox">
 
-        <h6>Please select a service:</h6>
-        <div class="form-check form-check-inline">
-            <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox1" value="option1" />
-            <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox1">Bath / Brush</label>
+    <form asp-action="Add" class="row g-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-md-6">
+            <label asp-for="ApptFirstName" class="control-label">First Name</label>
+            <input asp-for="ApptFirstName" class="form-control" />
+            <span asp-validation-for="ApptFirstName" class="text-danger"></span>
         </div>
-        <div class="form-check form-check-inline">
-            <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox2" value="option2" />
-            <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox2">Spa Package</label>
+        <div class="col-md-6">
+            <label asp-for="ApptLastName" class="control-label">Last Name</label>
+            <input asp-for="ApptLastName" class="form-control" />
+            <span asp-validation-for="ApptLastName" class="text-danger"></span>
         </div>
-        <div class="form-check form-check-inline">
-            <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox3" value="option3" />
-            <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox3">Nail Trim</label>
+        <div class="col-md-6">
+            <label asp-for="ApptPetName" class="control-label">Pet Name</label>
+            <input asp-for="ApptPetName" class="form-control" />
+            <span asp-validation-for="ApptPetName" class="text-danger"></span>
         </div>
-        <div class="form-check form-check-inline">
-            <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox4" value="option4" />
-            <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox4">Nail Dremel</label>
+        <div class="col-md-6">
+            <label asp-for="ApptPetBreed" class="control-label">Pet Breed</label>
+            <input asp-for="ApptPetBreed" class="form-control" />
+            <span asp-validation-for="ApptPetBreed" class="text-danger"></span>
         </div>
-        <div class="form-check form-check-inline">
-            <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox5" value="option5" />
-            <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox5">Teeth Brush</label>
+        <div class="col-md-6">
+            <label asp-for="ApptPetBirthDay" class="control-label">Pet Birthday</label>
+            <input asp-for="ApptPetBirthDay" class="form-control" />
+            <span asp-validation-for="ApptPetBirthDay" class="text-danger"></span>
         </div>
-    </div>
-    <div class="col">
-        <label asp-for="ApptDate" class="control-label">Please pick an appointment date</label>
-        <input asp-for="ApptDate" class="form-control" type="datetime-local" id="inputApptDate" />
-        <span asp-validation-for="ApptDate" class="text-danger"></span>
-    </div>
+        <div class="col-md-4">
+            <label asp-for="ApptPetWeight" class="control-label">Pet Weight</label>
+            <input asp-for="ApptPetWeight" class="form-control" />
+            <span asp-validation-for="ApptPetWeight" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="ApptPhoneNumber" class="control-label">Phone Number</label>
+            <input asp-for="ApptPhoneNumber" class="form-control" />
+            <span asp-validation-for="ApptPhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="ApptAddress1" class="control-label">Address</label>
+            <input asp-for="ApptAddress1" class="form-control" />
+            <span asp-validation-for="ApptAddress1" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="ApptAddress2" class="control-label">Address 2</label>
+            <input asp-for="ApptAddress2" class="form-control" />
+            <span asp-validation-for="ApptAddress2" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="ApptCity" class="control-label">City</label>
+            <input asp-for="ApptCity" class="form-control" />
+            <span asp-validation-for="ApptCity" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="ApptState" class="control-label">State</label>
+            <select asp-for="ApptState" class="form-control">
+                <option selected>Choose...</option>
+                <option>Alabama</option>
+                <option>Alaska</option>
+                <option>Arizona</option>
+                <option>Arkansas</option>
+                <option>California</option>
+                <option>Colorado</option>
+                <option>Connecticut</option>
+                <option>Delaware</option>
+                <option>District of Columbia</option>
+                <option>Florida</option>
+                <option>Georgia</option>
+                <option>Hawaii</option>
+                <option>Idaho</option>
+                <option>Illinois</option>
+                <option>Indiana</option>
+                <option>Iowa</option>
+                <option>Kansas</option>
+                <option>Kentucky</option>
+                <option>Louisiana</option>
+                <option>Maine</option>
+                <option>Maryland</option>
+                <option>Massachusetts</option>
+                <option>Michigan</option>
+                <option>Minnesota</option>
+                <option>Mississippi</option>
+                <option>Missouri</option>
+                <option>Montana</option>
+                <option>Nebraska</option>
+                <option>Nevada</option>
+                <option>New Hampshire</option>
+                <option>New Jersey</option>
+                <option>New Mexico</option>
+                <option>New York</option>
+                <option>North Carolina</option>
+                <option>North Dakota</option>
+                <option>Ohio</option>
+                <option>Oklahoma</option>
+                <option>Oregon</option>
+                <option>Pennsylvania</option>
+                <option>Puerto Rico</option>
+                <option>Rhode Island</option>
+                <option>South Carolina</option>
+                <option>South Dakota</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Utah</option>
+                <option>Vermont</option>
+                <option>Virginia</option>
+                <option>Washington</option>
+                <option>West Virginia</option>
+                <option>Wisconsin</option>
+                <option>Wyoming</option>
+            </select>
+            <span asp-validation-for="ApptState" class="text-danger"></span>
+        </div>
+        <div class="col-md-2">
+            <label asp-for="ApptZipcode" class="control-label">Zip</label>
+            <input asp-for="ApptZipcode" class="form-control" />
+            <span asp-validation-for="ApptZipcode" class="text-danger"></span>
+        </div>
 
-    <div class="align-content-lg-stretch">
+        <div class="col-12" id="servicesCheckBox">
+
+            <h6>Please select a service:</h6>
+            <div class="form-check form-check-inline">
+                <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox1" value="option1" />
+                <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox1">Bath / Brush</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox2" value="option2" />
+                <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox2">Spa Package</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox3" value="option3" />
+                <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox3">Nail Trim</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox4" value="option4" />
+                <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox4">Nail Dremel</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input asp-for="ApptServices" type="checkbox" id="inlineCheckbox5" value="option5" />
+                <label asp-for="ApptServices" class="form-check-label" for="inlineCheckbox5">Teeth Brush</label>
+            </div>
+        </div>
         <div class="col">
-            <h6>Select:</h6>
-            <button type="submit" class="btn btn-info">Submit</button>
-            @*<input type="submit" class="btn btn-primary" value="Make Appointment">/>*@
-            <button type="button" class="btn btn-secondary">Clear</button>
+            <label asp-for="ApptDate" class="control-label">Please pick an appointment date</label>
+            <input asp-for="ApptDate" class="form-control" type="datetime-local" id="inputApptDate" />
+            <span asp-validation-for="ApptDate" class="text-danger"></span>
         </div>
-    </div>
-</form>
+
+        <div class="align-content-lg-stretch">
+            <div class="col">
+                <h6>Select:</h6>
+                <button type="submit" class="btn btn-info">Submit</button>
+                @*<input type="submit" class="btn btn-primary" value="Make Appointment">/>*@
+                <button type="button" class="btn btn-secondary">Clear</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
