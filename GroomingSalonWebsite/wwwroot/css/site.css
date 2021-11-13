@@ -3,7 +3,10 @@ for details on configuring this project to bundle and minify static web assets. 
 
 body {
     background-image: url('../Images/ChristmasPugBG.jpg');
-    margin: 0;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
 }
 
 a.navbar-brand {
