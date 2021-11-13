@@ -9,6 +9,11 @@ body {
     background-repeat: no-repeat;
 }
 
+#container {
+    background-color:white; /*placeholder to see where the borders are*/
+    border:dashed;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
