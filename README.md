@@ -34,10 +34,12 @@ A scheduling and registration website used by a grooming salon business and it's
 ## Mobile Screenshots
 
 ### Index
-![Index-mobile](https://user-images.githubusercontent.com/77075506/141699050-eb94b57e-99f9-4fc5-9da7-244c0b8bda6d.png)![Index-mobile2](https://user-images.githubusercontent.com/77075506/141699051-7e9dba00-a1c6-49b7-8fcc-3a9ad89b508c.png)
+![Index-mobile](https://user-images.githubusercontent.com/77075506/141699936-93b6cb8c-ca26-4377-bfe1-d35a04b732af.png)
+
 
 ### About
-![About-mobile](https://user-images.githubusercontent.com/77075506/141699124-eea4e68f-2a50-4035-8740-a78fc565052c.png)![About-mobile2](https://user-images.githubusercontent.com/77075506/141699127-c601f78c-0426-4259-b055-33ae6fe4ff1a.png)
+![About-mobile](https://user-images.githubusercontent.com/77075506/141699941-712a9918-1a7d-42d9-9614-bdd011efaf46.png)
+
 
 ### Reschedule / Contact Us
 ![Reschedule_ContactUs-Mobile](https://user-images.githubusercontent.com/77075506/141699757-a863febe-2e42-4a9a-a899-1913fe1364db.png)
