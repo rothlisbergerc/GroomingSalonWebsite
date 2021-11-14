@@ -7,11 +7,12 @@ body {
     background-position: center;
     background-size:cover;
     background-repeat: no-repeat;
+    color:antiquewhite;
 }
 
 #container {
     /*background-color:white;*/ /*placeholder to see where the borders are*/
-    backdrop-filter:blur(20px);
+    backdrop-filter:blur(200px);
     /*border:outset;*/
     padding: 20px
 }
