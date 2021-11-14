@@ -3,49 +3,51 @@
 @{
     ViewData["Title"] = "Reschedule";
 }
+<body>
+    <div id="container">
+        <div class="text-center">
+            <h1 class="display-4">Need to make a change?</h1>   
+            <p>Reschedule, update, or cancel your appointment</p>
+        </div>
+        <hr />
 
-<div class="text-center">
-    <h1 class="display-4">Need to make a change?</h1>   
-    <p>Reschedule, update, or cancel your appointment</p>
-</div>
-
-<hr />
-
-<div class="row">
-
-    <div class="col-md-4">
-        <form asp-action="Reschedule">
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Reschedule">
             
-            <div class="form-group">
-                <label asp-for="ApptPhoneNumber" class="control-label">Phone number</label>
-                <input asp-for="ApptPhoneNumber" class="form-control" />
-                <span asp-validation-for="ApptPhoneNumber" class="text-danger"></span>               
+                    <div class="form-group">
+                        <label asp-for="ApptPhoneNumber" class="control-label">Phone number</label>
+                        <input asp-for="ApptPhoneNumber" class="form-control" />
+                        <span asp-validation-for="ApptPhoneNumber" class="text-danger"></span>               
+                    </div>
+
+                    <button type="submit" class="btn btn-info">Submit</button>
+                </form>
             </div>
+        </div>
 
-            <button type="submit" class="btn btn-info">Submit</button>
-        </form>
-    </div>
-</div>
+        <div class="text-center">
+            @*  The appointment information should appear here if an appointment is found.
+                If there is no appointment found, display "No appointment found for this phone number."
+            *@
+            <p>Appointment information placeholder</p>
+        </div>
 
-<div class="text-center">
-    @*  The appointment information should appear here if an appointment is found.
-        If there is no appointment found, display "No appointment found for this phone number."
-    *@
-    <p>Appointment information placeholder</p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Reschedule">      
-            @*Buttons disabled until appointment information has been found*@
-            <div>
-                <button type="submit" class="btn btn-info disabled">Reschedule</button>
-                <button type="button" class="btn btn-secondary disabled">Update</button>
-                <button type="button" class="btn btn-danger disabled">Cancel</button>
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Reschedule">      
+                    @*Buttons disabled until appointment information has been found*@
+                    <div>
+                        <button type="submit" class="btn btn-info disabled">Reschedule</button>
+                        <button type="button" class="btn btn-secondary disabled">Update</button>
+                        <button type="button" class="btn btn-danger disabled">Cancel</button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
-</div>
+</body>
+
 
 
 
