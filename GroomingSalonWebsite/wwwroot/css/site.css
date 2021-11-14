@@ -10,8 +10,10 @@ body {
 }
 
 #container {
-    background-color:white; /*placeholder to see where the borders are*/
-    border:dashed;
+    /*background-color:white;*/ /*placeholder to see where the borders are*/
+    backdrop-filter:blur(20px);
+    /*border:outset;*/
+    padding: 20px
 }
 
 a.navbar-brand {
