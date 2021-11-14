@@ -29,7 +29,7 @@ A scheduling and registration website used by a grooming salon business and it's
 ![Reschedule-pc](https://user-images.githubusercontent.com/77075506/141699017-07384bb4-427c-416e-af5f-15f3e3c2927d.png)
 
 ### ContactUs
-![ContactUs-pc](https://user-images.githubusercontent.com/77075506/141699020-a86b83d7-3a10-4bb2-a3a2-9efed62edf90.png)
+![ContactUs-pc](https://user-images.githubusercontent.com/77075506/141700217-584a1d03-42a5-4357-9203-e4e47ca1c23e.png)
 
 ## Mobile Screenshots
 
@@ -42,6 +42,7 @@ A scheduling and registration website used by a grooming salon business and it's
 
 
 ### Reschedule / Contact Us
-![Reschedule_ContactUs-Mobile](https://user-images.githubusercontent.com/77075506/141699757-a863febe-2e42-4a9a-a899-1913fe1364db.png)
+![Reschedule_ContactUs-Mobile](https://user-images.githubusercontent.com/77075506/141700380-a493fa02-04c6-44e1-9eb3-36990f1e01e0.png)
+
 
 
