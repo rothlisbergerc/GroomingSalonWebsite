@@ -11,10 +11,10 @@ body {
 }
 
 #container {
-    /*background-color:white;*/ /*placeholder to see where the borders are*/
+    border-radius:35px;
     backdrop-filter:blur(200px);
-    /*border:outset;*/
     padding: 20px
+    
 }
 
 a.navbar-brand {
