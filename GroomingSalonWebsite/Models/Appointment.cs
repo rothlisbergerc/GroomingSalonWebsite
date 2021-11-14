@@ -19,6 +19,7 @@ namespace GroomingSalonWebsite.Models
 
         public string ApptPetBreed { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime ApptPetBirthDay { get; set; }
 
         public int ApptPetWeight { get; set; }
@@ -38,7 +39,7 @@ namespace GroomingSalonWebsite.Models
         //Needs to be an int because most zipcodes consist of 5 digits.
         public int ApptZipcode { get; set; }
 
-        public bool ApptServices { get; set; }
+        public string ApptServices { get; set; }
 
         public DateTime ApptDate { get; set; }
 
