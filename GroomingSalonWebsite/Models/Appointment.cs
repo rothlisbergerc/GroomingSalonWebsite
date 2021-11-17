@@ -16,7 +16,7 @@ namespace GroomingSalonWebsite.Models
         [DisplayName("First Name")]
         [RegularExpression(@"^[a-zA-Z'\s]*$", ErrorMessage = "Can only consist of letters and have at least 2")]
         //Most first and last names have at least 2 letters at minimum.
-        [StringLength(20,MinimumLength = 2)]
+        [StringLength(20, MinimumLength = 2)]
         public string ApptFirstName { get; set; }
 
         [Required(ErrorMessage = "Last name is required")]
@@ -44,13 +44,12 @@ namespace GroomingSalonWebsite.Models
 
         [Required(ErrorMessage = "An estimate is ok for weight")]
         [DisplayName("Pets Weight")]
-        //No pet in all of history has lived passed 3 digits.
-        [StringLength(3,MinimumLength = 1)]
+        [Range(1,999)]
         public int ApptPetWeight { get; set; }
 
         [Required(ErrorMessage = "Must be a valid phone number")]
         [DisplayName("Your phone number")]
-        [DataType(DataType.PhoneNumber)]
+        [Phone]
         [RegularExpression(@"^\d+$", ErrorMessage = "Please enter numbers only")]
         [StringLength(9,MinimumLength = 9)]
         public string ApptPhoneNumber { get; set; }
@@ -74,10 +73,14 @@ namespace GroomingSalonWebsite.Models
         [Required(ErrorMessage = "Please enter 5 digit zipcode")]
         [DisplayName("Address Zipcode")]
         [StringLength(5,MinimumLength = 5)]
-        public int ApptZipcode { get; set; }
+        [RegularExpression(@"^\d+$", ErrorMessage = "Please enter numbers only")]
+        public string ApptZipcode { get; set; }
 
         [Required(ErrorMessage = "Need at least 1 service chosen")]
         [DisplayName("Chosen Service")]
+        //Could add hidden field in javascript and as they click on the checkboxes you could add to the value.
+        //Stays 1 string vs it being broken and only displaying most recent choice in database.
+        //When unchecked also remove that choice from the string.
         public string ApptServices { get; set; }
 
         [Required(ErrorMessage = "Need to know what date your coming in")]
