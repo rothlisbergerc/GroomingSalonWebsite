@@ -12,48 +12,76 @@ namespace GroomingSalonWebsite.Models
         [Key]
         public int AppointmentId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "We need a first name")]
+        [DisplayName("First Name")]
+        [RegularExpression(@"^[a-zA-Z'\s]*$", ErrorMessage = "Can only consist of letters and have at least 2")]
+        //Most first and last names have at least 2 letters at minimum.
+        [StringLength(20,MinimumLength = 2)]
         public string ApptFirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Last name is required")]
+        [DisplayName("Last Name")]
+        [RegularExpression(@"^[a-zA-Z'\s]*$", ErrorMessage = "Can only consist of letters and have at least 2")]
+        //Most first and last names have at least 2 letters at minimum.
+        [StringLength(20, MinimumLength = 2)]
         public string ApptLastName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Every pet has a name")]
+        [DisplayName("Pet Name")]
         public string ApptPetName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Your pet has some kind of breed")]
+        [DisplayName("Animal Breed")]
+        [RegularExpression(@"^[a-zA-Z'\s]*$", ErrorMessage = "Animal breed needs to be at least 2 letters long")]
+        //Breeds need at least 2 letters to state what they are.
+        [StringLength(20, MinimumLength = 2)]
         public string ApptPetBreed { get; set; }
 
         [DataType(DataType.Date)]
-        [Required]
+        [Required(ErrorMessage = "An estimate is ok for birthday")]
+        [DisplayName("Pets Birthday")]
         public DateTime ApptPetBirthDay { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "An estimate is ok for weight")]
+        [DisplayName("Pets Weight")]
+        //No pet in all of history has lived passed 3 digits.
+        [StringLength(3,MinimumLength = 1)]
         public int ApptPetWeight { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Must be a valid phone number")]
+        [DisplayName("Your phone number")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\d+$", ErrorMessage = "Please enter numbers only")]
+        [StringLength(9,MinimumLength = 9)]
         public string ApptPhoneNumber { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Need a mailing address")]
+        [DisplayName("Home Address")]
         public string ApptAddress1 { get; set; }
 
-        [Required]
+        [DisplayName("Secondary Address")]
         public string? ApptAddress2 { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Mailing address' city")]
+        [DisplayName("Address City")]
         public string ApptCity { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Mailing address' state")]
+        [DisplayName("Address State")]
         public string ApptState { get; set; }
 
         //Needs to be an int because most zipcodes consist of 5 digits.
-        [Required]
+        [Required(ErrorMessage = "Please enter 5 digit zipcode")]
+        [DisplayName("Address Zipcode")]
+        [StringLength(5,MinimumLength = 5)]
         public int ApptZipcode { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Need at least 1 service chosen")]
+        [DisplayName("Chosen Service")]
         public string ApptServices { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Need to know what date your coming in")]
+        [DisplayName("Appointment date")]
         public DateTime ApptDate { get; set; }
 
         public override string ToString()
