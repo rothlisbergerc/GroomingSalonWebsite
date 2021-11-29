@@ -12,7 +12,7 @@ body {
 
 #navContainer {
     backdrop-filter: blur(200px);
-    margin-bottom: 35px;     
+    margin-bottom: 35px;
 }
 
 #container {
@@ -33,7 +33,7 @@ a {
     color: antiquewhite;
 }
 
-.btn-primary {
+.btn-primary {    
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
