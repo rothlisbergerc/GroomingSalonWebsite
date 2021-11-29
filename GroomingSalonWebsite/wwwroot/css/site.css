@@ -22,7 +22,7 @@ body {
 }
 
 a.navbar-brand {
-    white-space: normal;
+    white-space: nowrap;
     text-align: center;
     color: antiquewhite;
     word-break: break-all;
@@ -30,7 +30,7 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-    color: #0366d6;
+    color: antiquewhite;
 }
 
 .btn-primary {
