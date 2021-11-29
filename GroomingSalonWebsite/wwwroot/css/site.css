@@ -12,6 +12,7 @@ body {
 
 #navContainer {
     backdrop-filter: blur(200px);
+    margin-bottom: 35px
 }
 
 #container {
