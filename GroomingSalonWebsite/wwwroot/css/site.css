@@ -12,7 +12,7 @@ body {
 
 #navContainer {
     backdrop-filter: blur(200px);
-    margin-bottom: 35px
+    margin-bottom: 35px;     
 }
 
 #container {
@@ -24,6 +24,7 @@ body {
 a.navbar-brand {
     white-space: normal;
     text-align: center;
+    color: antiquewhite;
     word-break: break-all;
 }
 
