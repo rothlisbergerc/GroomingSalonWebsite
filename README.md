@@ -19,30 +19,50 @@ A scheduling and registration website used by a grooming salon business and it's
 ## Desktop Screenshots
 **Disclaimer: This project is a work-in-progress. Screenshots will be updated to reflect the most current version**
 
-### Index
-![Index-pc](https://user-images.githubusercontent.com/77075506/141698930-205c69d6-ef9b-4335-866e-dd904d0d000a.png)
+### Home
+![desktop-home](https://user-images.githubusercontent.com/77075506/144114641-14c9fba9-9dae-40fe-9d6c-b0281069badc.png)
+
 
 ### About
-![About-pc](https://user-images.githubusercontent.com/77075506/141699012-498309ac-c51d-420b-b2e5-8cbf30f95c10.png)
+![desktop-about](https://user-images.githubusercontent.com/77075506/144114664-36c3463d-6ffd-42cd-bb49-5b59d6364255.png)
+
 
 ### Reschedule
-![Reschedule-pc](https://user-images.githubusercontent.com/77075506/141699017-07384bb4-427c-416e-af5f-15f3e3c2927d.png)
+![desktop-reschedule](https://user-images.githubusercontent.com/77075506/144114704-bfc05ce7-d036-40ee-8a74-ca84ecc24775.png)
 
-### ContactUs
-![ContactUs-pc](https://user-images.githubusercontent.com/77075506/141700217-584a1d03-42a5-4357-9203-e4e47ca1c23e.png)
+
+### Contact Us
+![desktop-contactus](https://user-images.githubusercontent.com/77075506/144114722-6d702e10-1cee-412c-b47a-04aa5b1cac2c.png)
+
+
+### Privacy Policy 
+![desktop-privacy-top](https://user-images.githubusercontent.com/77075506/144114826-602a7d91-7705-4a44-b198-788961393f47.png)
+![desktop-privacy-bottom](https://user-images.githubusercontent.com/77075506/144114863-f496bf35-c2c6-457b-8eb0-50ae524999a0.png)
+
+
 
 ## Mobile Screenshots
 
-### Index
-![Index-mobile](https://user-images.githubusercontent.com/77075506/141699936-93b6cb8c-ca26-4377-bfe1-d35a04b732af.png)
+### Overflow Menu
+![mobile-overflowmenu](https://user-images.githubusercontent.com/77075506/144114986-c52f467c-418b-4916-a935-df353398b0f6.png)
+
+
+### Home
+![mobile-home](https://user-images.githubusercontent.com/77075506/144114887-e5d0f2d7-248e-402d-b387-9ba65eda00c3.png)
 
 
 ### About
-![About-mobile](https://user-images.githubusercontent.com/77075506/141699941-712a9918-1a7d-42d9-9614-bdd011efaf46.png)
+![mobile-about](https://user-images.githubusercontent.com/77075506/144115003-d635eec8-b54b-45bd-855a-4e9460d464df.png)
 
 
 ### Reschedule / Contact Us
-![Reschedule_ContactUs-Mobile](https://user-images.githubusercontent.com/77075506/141700380-a493fa02-04c6-44e1-9eb3-36990f1e01e0.png)
+![mobile-reschedule-contactus](https://user-images.githubusercontent.com/77075506/144115054-61b48801-711e-404d-a66b-7d25a9ed7ab7.png)
+
+
+### Privacy Policy
+![mobile-privacypolicy](https://user-images.githubusercontent.com/77075506/144115105-930e8e55-3d4f-4543-84f8-79f11ca9c59a.png)
+
+
 
 
 
