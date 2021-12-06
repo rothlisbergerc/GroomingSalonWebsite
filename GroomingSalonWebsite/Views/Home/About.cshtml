@@ -1,11 +1,12 @@
-﻿@model IEnumerable<GroomingSalonWebsite.Models.About>
+﻿@*Displays information about the salon and pictures of the staff*@
+@model IEnumerable<GroomingSalonWebsite.Models.About>
 
 @{
     ViewData["Title"] = "About";
 }
 <body>
     <div id="container">
-         <div class="text-center">
+        <div class="text-center">
             <h1 class="display-4">About us</h1>
         </div>
 
@@ -48,8 +49,8 @@
 
         <br />
 
+        <!--staff profile images and labels-->
         <div class="row text-center">
-            <!-- Team item-->
             <div class="col-xl-3 col-sm-6 mb-5">
                 <div>
                     <img src="/Images/ProfileBBG.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
