@@ -361,4 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+<<<<<<< SlightErrorFix
+/GroomingSalonWebsite/Properties/ServiceDependencies/GroomingSalonWebsite20211127104233 - Zip Deploy
+=======
+>>>>>>> master
 /GroomingSalonWebsite/Properties
