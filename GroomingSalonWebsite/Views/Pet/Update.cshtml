@@ -1,13 +1,14 @@
-﻿@model Pet
+﻿@*Updates pet information to the database*@
+@model Pet
 
 @{
     ViewData["Title"] = "Update" + Model.Name;
 }
 @if (ViewData["Message"] != null)
 {
-    <div class="alert alert-success">
-        @ViewData["Message"]
-    </div>
+<div class="alert alert-success">
+    @ViewData["Message"]
+</div>
 }
 
 <h1>Update</h1>

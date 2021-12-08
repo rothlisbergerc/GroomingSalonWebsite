@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+//DBContext class that sets up all the different contexts that get accessed throughout the entire project.
 namespace GroomingSalonWebsite.Data
 {
     public class SalonContext : DbContext

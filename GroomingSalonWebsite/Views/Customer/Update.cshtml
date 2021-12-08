@@ -1,13 +1,14 @@
-﻿@model Customer
+﻿@*Updates customer information to the database*@
+@model Customer
 
 @{
     ViewData["Title"] = "Update" + Model.FirstName + Model.LastName;
 }
 @if(ViewData["Message"] != null)
 {
-    <div class="alert alert-success">
-        @ViewData["Message"]
-    </div>
+<div class="alert alert-success">
+    @ViewData["Message"]
+</div>
 }
 
 <h1>Update @Model.FirstName @Model.LastName</h1>
