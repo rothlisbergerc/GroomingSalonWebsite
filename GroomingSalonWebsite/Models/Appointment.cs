@@ -51,7 +51,7 @@ namespace GroomingSalonWebsite.Models
         [DisplayName("Your phone number")]
         [Phone]
         [RegularExpression(@"^\d+$", ErrorMessage = "Please enter numbers only")]
-        [StringLength(9,MinimumLength = 9)]
+        [StringLength(10,MinimumLength = 10)]
         public string ApptPhoneNumber { get; set; }
 
         [Required(ErrorMessage = "Need a mailing address")]
