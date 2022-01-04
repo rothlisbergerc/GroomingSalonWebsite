@@ -62,6 +62,11 @@ namespace GroomingSalonWebsite.Controllers
         [HttpPost]
         public async Task<IActionResult> AddAsync(Appointment appt)
         {
+            //Checking to ensure that the state isn't actually just left on the "Choose..." option.
+            if(appt.ApptState == "Choose...")
+            {
+                return View("Index");
+            }
             //Create a new customer to pass into the DB so they get logged correctly from the 
             //appointments information
             Customer c = new Customer()
