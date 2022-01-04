@@ -63,7 +63,9 @@ namespace GroomingSalonWebsite.Controllers
         public async Task<IActionResult> AddAsync(Appointment appt)
         {
             //Checking to ensure that the state isn't actually just left on the "Choose..." option.
-            if(appt.ApptState == "Choose...")
+            //The first && checks whether or not the pet was not born in the future.
+            //The second && checks whether or not the appointment is actually sometime in the future and not in a past date.
+            if(appt.ApptState == "Choose..." || appt.ApptPetBirthDay > DateTime.Today || appt.ApptDate < DateTime.Now.AddHours(1))
             {
                 return View("Index");
             }
