@@ -27,21 +27,25 @@ namespace GroomingSalonWebsite.Controllers
             return View(Messages);
         }
         //Basic view.
-        [HttpGet]
         public IActionResult ContactUs()
         {
             return View();
         }
         //Basic add page that if the user submits valid information then it returns to the contactUs page again.
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
         [HttpPost]
-        public async Task<IActionResult> Add(ContactUs cm)
+        public async Task<IActionResult> AddAsync(ContactUs cm)
         {
             if(ModelState.IsValid)
             {
                 await SalonDB.addContactMessage(_context, cm);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("ContactUs");
             }
-            return View();
+            return View(cm);
         }
         //Used for the delete page and validation.
         [HttpGet]

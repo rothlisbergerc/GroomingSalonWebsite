@@ -24,6 +24,7 @@
             <!--Grid column-->
             <div class="col-md-9 mb-md-0 mb-5">
                 <form asp-action="Add">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <!--<form asp-action="Add" <!--id="contact-form" name="contact-form" action="mail.php" method="POST"-->
                     <!--Grid row-->
                     <div class="row">
@@ -33,6 +34,7 @@
                             <div class="md-form mb-0">
                                 <label for="name" class="" asp-for="name">Your name</label>
                                 <input type="text" id="name" name="name" class="form-control" asp-for="name">
+                                <span asp-validation-for="name" class="text-danger"></span>
                             </div>
                         </div>
                         <!--Grid column-->
@@ -41,6 +43,7 @@
                             <div class="md-form mb-0">
                                 <label for="email" class="" asp-for="email">Your email</label>
                                 <input type="text" id="email" name="email" class="form-control" asp-for="email">
+                                <span asp-validation-for="email" class="text-danger"></span>
                             </div>
                         </div>
                         <!--Grid column-->
@@ -53,6 +56,7 @@
                             <div class="md-form mb-0">
                                 <label for="subject" class="" asp-for="subject">Subject</label>
                                 <input type="text" id="subject" name="subject" class="form-control" asp-for="subject">
+                                <span asp-validation-for="subject" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -66,6 +70,7 @@
                             <div class="md-form">
                                 <label for="message" asp-for="message">Message</label>
                                 <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" asp-for="message"></textarea>
+                                <span asp-validation-for="message" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -90,10 +95,10 @@
                         </div>
                     </div>
 
-                     <br />
+                    <br />
 
                     <div class="text-center text-md-left">
-                        <input type="submit" value="Send" class="btn btn-primary" />
+                        <button type="submit" class="btn btn-info">Send</button>
                         <!--<a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>-->
                     </div>
                 </form>
