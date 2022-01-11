@@ -1,5 +1,4 @@
-﻿@*Adds email message information to the database*@
-@model ContactUs
+﻿@model GroomingSalonWebsite.Models.ContactUs
 
 @{
     ViewData["Title"] = "Add";
@@ -32,6 +31,11 @@
                 <label asp-for="message" class="control-label"></label>
                 <input asp-for="message" class="form-control" />
                 <span asp-validation-for="message" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hearabout" class="control-label"></label>
+                <input asp-for="hearabout" class="form-control" />
+                <span asp-validation-for="hearabout" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

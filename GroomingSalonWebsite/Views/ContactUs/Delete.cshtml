@@ -1,5 +1,4 @@
-﻿@*Deletes email information from the database*@
-@model ContactUs
+﻿@model GroomingSalonWebsite.Models.ContactUs
 
 @{
     ViewData["Title"] = "Delete";
@@ -35,6 +34,12 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.message)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hearabout)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hearabout)
         </dd>
     </dl>
     
