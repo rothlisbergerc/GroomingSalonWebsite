@@ -23,6 +23,14 @@ body {
     color: antiquewhite;
 }
 
+thead {
+    color: antiquewhite;
+}
+
+tbody {
+    color: antiquewhite;
+}
+
 #navContainer {
     backdrop-filter: blur(200px);
     margin-bottom: 20px;

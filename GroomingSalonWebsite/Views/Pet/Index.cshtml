@@ -4,44 +4,47 @@
     @{
     ViewData["Title"] = "View";
     }
+    <div id="container">
 
-    <h1>View</h1>
+    
+        <h1>List of Pets</h1>
 
-    <p>
-        <a asp-action="Add">Add a new pet</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Breed)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Age)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (Pet p in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => p.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => p.Breed)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => p.Age)
-                </td>
-                <td>
-                    <a asp-action="Update" asp-route-id="@p.PetId">Update</a> |
-                    <a asp-action="Delete" asp-route-id="@p.PetId">Delete</a>
-                </td>
-            </tr>
-}
-        </tbody>
-    </table>
+        <p>
+            <a asp-action="Add">Add a new pet</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Breed)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Age)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Pet p in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => p.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => p.Breed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => p.Age)
+                    </td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@p.PetId">Update</a> |
+                        <a asp-action="Delete" asp-route-id="@p.PetId">Delete</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
