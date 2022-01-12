@@ -23,6 +23,10 @@ body {
     color: antiquewhite;
 }
 
+thead {
+    color: antiquewhite;
+}
+
 tbody {
     color: antiquewhite;
 }
