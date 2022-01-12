@@ -17,6 +17,7 @@ namespace GroomingSalonWebsite.Models
         public string name { get; set; }
         //The customers email they enter.
         [Required(ErrorMessage ="Please enter an email")]
+        [EmailAddress]
         [DisplayName("Customer Email")]
         public string email { get; set; }
         //The main tagline for the email that is being sent
