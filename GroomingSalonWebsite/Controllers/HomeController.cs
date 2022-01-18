@@ -111,5 +111,10 @@ namespace GroomingSalonWebsite.Controllers
             }
             return View(appt);
         }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
     }
 }
