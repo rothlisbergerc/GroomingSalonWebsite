@@ -11,9 +11,9 @@
     <form asp-action="add" class="row g-3">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="col-md-6">
-            <label asp-for="AccountName" class="control-label">Email</label>
-            <input asp-for="AccountName" class="form-control" />
-            <span asp-validation-for="AccountName" class="text-danger"></span>
+            <label asp-for="AccountEmail" class="control-label">Email</label>
+            <input asp-for="AccountEmail" class="form-control" />
+            <span asp-validation-for="AccountEmail" class="text-danger"></span>
         </div>
         <div class="col-md-6">
             <label asp-for="AccountPassword" class="control-label">Password</label>
@@ -25,7 +25,7 @@
                 <h6>Select:</h6>
                 <button type="submit" class="btn btn-info">Submit</button>
                 <button type="reset" class="btn btn-danger">Clear</button>
-                <button type="button" class="btn btn-secondary" onclick="@("window.location.href='" + @Url.Action("AccountCreate", "Home") + "'");">Create an Account</button>
+                <button type="button" class="btn btn-secondary" onclick="@("window.location.href='" + @Url.Action("Register", "Home") + "'");">Create an Account</button>
             </div>
         </div>
     </form>

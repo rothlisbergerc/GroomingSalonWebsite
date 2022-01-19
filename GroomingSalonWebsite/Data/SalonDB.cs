@@ -96,5 +96,26 @@ namespace GroomingSalonWebsite.Data
                                        select cm).SingleAsync();
             return message;
         }
+        //Getting all the customer accounts that exist in the database.
+        public static async Task<List<Account>> getAllAccounts(SalonContext _context)
+        {
+            return await (from acc in _context.Accounts
+                          select acc).ToListAsync();
+        }
+        //Adding a new users account into the DB.
+        public static async Task<Account> addNewAccount(SalonContext _context, Account acc)
+        {
+            _context.Accounts.Add(acc);
+            await _context.SaveChangesAsync();
+            return acc;
+        }
+        //Retrieving a singular users account based on their id.
+        public static async Task<Account> getAccountAsync(SalonContext _context, int accId)
+        {
+            Account userAcc = await (from acc in _context.Accounts
+                                     where acc.AccountId == accId
+                                     select acc).SingleAsync();
+            return userAcc;
+        }
     }
 }
