@@ -116,10 +116,20 @@ namespace GroomingSalonWebsite.Controllers
         {
             return View();
         }
-
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Register(Account acc)
+        {
+            if(ModelState.IsValid)
+            {
+                await SalonDB.addNewAccount(_context, acc);
+                return RedirectToAction("Login");
+            }
+            return View(acc);
         }
     }
 }
