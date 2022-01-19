@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//Customer class that allows users to create themselves on the website.
+//Customer class that stores all users information from when they are registering for an appointment.
 namespace GroomingSalonWebsite.Models
 {
     public class Customer

@@ -1,0 +1,32 @@
+﻿@model GroomingSalonWebsite.Models.Account
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div id="container">
+    <div class="text-center">
+        <h1 class="display-4">Login to your Account!</h1>
+    </div>
+    <form asp-action="add" class="row g-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-md-6">
+            <label asp-for="AccountName" class="control-label">Email</label>
+            <input asp-for="AccountName" class="form-control" />
+            <span asp-validation-for="AccountName" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="AccountPassword" class="control-label">Password</label>
+            <input asp-for="AccountPassword" class="form-control" />
+            <span asp-validation-for="AccountPassword" class="text-danger"></span>
+        </div>
+        <div class="align-content-lg-stretch">
+            <div class="col">
+                <h6>Select:</h6>
+                <button type="submit" class="btn btn-info">Submit</button>
+                <button type="reset" class="btn btn-danger">Clear</button>
+                <button type="button" class="btn btn-secondary" onclick="@("window.location.href='" + @Url.Action("AccountCreate", "Home") + "'");">Create an Account</button>
+            </div>
+        </div>
+    </form>
+</div>
