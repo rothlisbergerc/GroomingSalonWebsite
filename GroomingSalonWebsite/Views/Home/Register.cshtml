@@ -13,32 +13,45 @@
         <div class="col-md-6">
             <label asp-for="AccountEmail" class="control-label">Email</label>
             <input asp-for="AccountEmail" class="form-control" />
-            <span asp-validation-for="AccountEmail" class="font-weight-bold"   ></span>
+            <div id="errorSpan" class="font-weight-bold">
+                <span asp-validation-for="AccountEmail" class="text-danger"></span>
+            </div>
+            
         </div>
         <div class="col-md-6">
             <label asp-for="AccountPassword" class="control-label">Password</label>
             <input asp-for="AccountPassword" class="form-control" />
-            <span asp-validation-for="AccountPassword" class="text-danger"></span>
+            <div id="errorSpan" class="font-weight-bold">
+                <span asp-validation-for="AccountPassword" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-md-6">
             <label asp-for="AccountName" class="control-label">UserName</label>
             <input asp-for="AccountName" class="form-control" />
-            <span asp-validation-for="AccountName" class="text-danger"></span>
+            <div id="errorSpan" class="font-weight-bold">
+                <span asp-validation-for="AccountName" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-md-6">
             <label asp-for="AccountPhoneNumber" class="control-label">Phone Number</label>
             <input asp-for="AccountPhoneNumber" class="form-control" />
-            <span asp-validation-for="AccountPhoneNumber" class="text-danger"></span>
+            <div id="errorSpan" class="font-weight-bold">
+                <span asp-validation-for="AccountPhoneNumber" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-md-6">
             <label asp-for="AccountFirstName" class="control-label">First Name</label>
             <input asp-for="AccountFirstName" class="form-control" />
-            <span asp-validation-for="AccountFirstName" class="text-danger"></span>
+            <div id="errorSpan" class="font-weight-bold">
+                <span asp-validation-for="AccountFirstName" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-md-6">
             <label asp-for="AccountLastName" class="control-label">Last Name</label>
             <input asp-for="AccountLastName" class="form-control" />
-            <span asp-validation-for="AccountLastName" class="text-danger"></span>
+            <div id="errorSpan" class="font-weight-bold">
+                <span asp-validation-for="AccountLastName" class="text-danger"></span>
+            </div>
         </div>
         <div class="align-content-lg-stretch">
             <div class="col">
