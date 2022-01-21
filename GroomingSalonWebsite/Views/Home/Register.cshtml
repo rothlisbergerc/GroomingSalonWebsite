@@ -20,7 +20,14 @@
             
         </div>
         <div class="col-md-6">
-            <label asp-for="AccountPassword" class="control-label">Password</label>
+            <label asp-for="AccountPassword" class="control-label">Create Password</label>
+            <input asp-for="AccountPassword" class="form-control" />
+            <div id="errorSpan" class="font-weight-bold">
+                <span asp-validation-for="AccountPassword" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="AccountPassword" class="control-label">Confirm Password</label>
             <input asp-for="AccountPassword" class="form-control" />
             <div id="errorSpan" class="font-weight-bold">
                 <span asp-validation-for="AccountPassword" class="text-danger"></span>
