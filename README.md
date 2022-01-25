@@ -20,47 +20,64 @@ A scheduling and registration website used by a grooming salon business and it's
 **Disclaimer: This project is a work-in-progress. Screenshots will be updated to reflect the most current version**
 
 ### Home
-![desktop-home](https://user-images.githubusercontent.com/77075506/144114641-14c9fba9-9dae-40fe-9d6c-b0281069badc.png)
+![Desktop_Home](https://user-images.githubusercontent.com/77075506/151049043-1de86a70-814a-48c0-9c91-100b7fc92517.png)
+
 
 
 ### About
-![desktop-about](https://user-images.githubusercontent.com/77075506/144114664-36c3463d-6ffd-42cd-bb49-5b59d6364255.png)
+![Desktop_AboutUs](https://user-images.githubusercontent.com/77075506/151049055-cba595c2-1d00-4a69-be32-c015a729292c.png)
 
 
 ### Reschedule
-![desktop-reschedule](https://user-images.githubusercontent.com/77075506/144114704-bfc05ce7-d036-40ee-8a74-ca84ecc24775.png)
+![Desktop_Reschedule](https://user-images.githubusercontent.com/77075506/151049070-873f95a1-b9c2-46d6-a4d0-ff6377207db7.png)
 
 
 ### Contact Us
-![desktop-contactus](https://user-images.githubusercontent.com/77075506/144114722-6d702e10-1cee-412c-b47a-04aa5b1cac2c.png)
+![Desktop_ContactUs](https://user-images.githubusercontent.com/77075506/151049101-b1c0f30c-5b97-4a99-bdae-7b2ea4c4cc15.png)
 
 
 ### Privacy Policy 
-![desktop-privacy-top](https://user-images.githubusercontent.com/77075506/144114826-602a7d91-7705-4a44-b198-788961393f47.png)
-![desktop-privacy-bottom](https://user-images.githubusercontent.com/77075506/144114863-f496bf35-c2c6-457b-8eb0-50ae524999a0.png)
+![Desktop_Privacy](https://user-images.githubusercontent.com/77075506/151049116-2decde0f-d3d1-4224-b618-02b721fa2dc9.png)
 
+
+### Log In
+![Desktop_LogIn](https://user-images.githubusercontent.com/77075506/151049180-8a0bfeb7-0582-430a-9510-455559f97483.png)
+
+
+### Registration
+![Desktop_Register](https://user-images.githubusercontent.com/77075506/151049222-43d05f04-672f-4727-93b5-22ec7ef36e16.png)
 
 
 ## Mobile Screenshots
 
 ### Overflow Menu
-![mobile-overflowmenu](https://user-images.githubusercontent.com/77075506/144114986-c52f467c-418b-4916-a935-df353398b0f6.png)
+![Mobile_OverflowMenu](https://user-images.githubusercontent.com/77075506/151049289-5aabeee0-3ef4-44dd-a140-d0ec68279c09.png)
 
 
 ### Home
-![mobile-home](https://user-images.githubusercontent.com/77075506/144114887-e5d0f2d7-248e-402d-b387-9ba65eda00c3.png)
+![Mobile_Home_Comb](https://user-images.githubusercontent.com/77075506/151049321-77244cc1-31f1-4dd4-85dc-d0050246c183.png)
 
 
 ### About
-![mobile-about](https://user-images.githubusercontent.com/77075506/144115003-d635eec8-b54b-45bd-855a-4e9460d464df.png)
+![Mobile_AboutUs_Comb](https://user-images.githubusercontent.com/77075506/151049334-b118907c-b61a-4a29-99a0-9364ab20436e.png)
 
 
 ### Reschedule / Contact Us
-![mobile-reschedule-contactus](https://user-images.githubusercontent.com/77075506/144115054-61b48801-711e-404d-a66b-7d25a9ed7ab7.png)
+![Mobile_RescheduleContactUs_Comb](https://user-images.githubusercontent.com/77075506/151049673-b5df883b-6587-494b-a336-3fcd368b34b9.png)
 
 
 ### Privacy Policy
-![mobile-privacypolicy](https://user-images.githubusercontent.com/77075506/144115105-930e8e55-3d4f-4543-84f8-79f11ca9c59a.png)
+![Mobile_Privacy_Comb_Pt1](https://user-images.githubusercontent.com/77075506/151049373-c9737dd5-61ec-4081-8f39-0dab61daf3cb.png)
+![Mobile_Privacy_Pt3](https://user-images.githubusercontent.com/77075506/151049395-1edf7c6f-7af9-4ab1-b53b-5f08f181d235.png)
+
+
+### Log In
+![Mobile_LogIn](https://user-images.githubusercontent.com/77075506/151049418-1e88df94-b3a4-40b8-9933-33e7d471abd5.png)
+
+
+### Registration
+![Mobile_Registration](https://user-images.githubusercontent.com/77075506/151049432-b0ae2787-bf5e-4ffd-80ff-910ac1faa8e1.png)
+
 
 
 
