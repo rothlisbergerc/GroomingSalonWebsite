@@ -50,10 +50,6 @@ A scheduling and registration website used by a grooming salon business and it's
 
 ## Mobile Screenshots
 
-### Overflow Menu
-![Mobile_OverflowMenu](https://user-images.githubusercontent.com/77075506/151049289-5aabeee0-3ef4-44dd-a140-d0ec68279c09.png)
-
-
 ### Home
 ![Mobile_Home_Comb](https://user-images.githubusercontent.com/77075506/151049321-77244cc1-31f1-4dd4-85dc-d0050246c183.png)
 
@@ -66,20 +62,14 @@ A scheduling and registration website used by a grooming salon business and it's
 ![Mobile_RescheduleContactUs_Comb](https://user-images.githubusercontent.com/77075506/151049673-b5df883b-6587-494b-a336-3fcd368b34b9.png)
 
 
+### Log In / Registration
+![Mobile_LogInRegistration_Comb](https://user-images.githubusercontent.com/77075506/151050593-24cd4fc6-5aca-4a19-973d-790f4f64d022.png)
+
+
 ### Privacy Policy
 ![Mobile_Privacy_Comb_Pt1](https://user-images.githubusercontent.com/77075506/151049373-c9737dd5-61ec-4081-8f39-0dab61daf3cb.png)
 ![Mobile_Privacy_Pt3](https://user-images.githubusercontent.com/77075506/151049395-1edf7c6f-7af9-4ab1-b53b-5f08f181d235.png)
 
 
-### Log In
-![Mobile_LogIn](https://user-images.githubusercontent.com/77075506/151049418-1e88df94-b3a4-40b8-9933-33e7d471abd5.png)
-
-
-### Registration
-![Mobile_Registration](https://user-images.githubusercontent.com/77075506/151049432-b0ae2787-bf5e-4ffd-80ff-910ac1faa8e1.png)
-
-
-
-
-
-
+### Overflow Menu
+![Mobile_OverflowMenu](https://user-images.githubusercontent.com/77075506/151049289-5aabeee0-3ef4-44dd-a140-d0ec68279c09.png)
