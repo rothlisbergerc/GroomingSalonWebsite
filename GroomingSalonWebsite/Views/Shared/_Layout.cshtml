@@ -49,12 +49,13 @@
                 </div>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Login">Log In</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
-                        </li>
+                        <partial name="_LoginPartial" />
+                        @*<li class="nav-item">
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Login">Log In</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+        </li>*@
                     </ul>
                 </div>
             </div>

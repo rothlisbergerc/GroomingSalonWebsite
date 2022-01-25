@@ -1,4 +1,6 @@
 ﻿using GroomingSalonWebsite.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 //DBContext class that sets up all the different contexts that get accessed throughout the entire project.
 namespace GroomingSalonWebsite.Data
 {
-    public class SalonContext : DbContext
+    public class SalonContext : IdentityDbContext<IdentityUser>
     {
         public SalonContext(DbContextOptions<SalonContext> options) : base(options) { }
 
