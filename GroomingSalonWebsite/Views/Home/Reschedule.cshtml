@@ -33,11 +33,12 @@
             *@
             @if (TempData["ApptDate"] == null)
             {
-                <p>There are no appointments scheduled for this phone number</p>
+                <h3>No appointments are scheduled</h3>
+                <br />
             }
             else
             {
-                <h3>Your appointment is currently scheduled for</h3>
+                <h3>Your appointment is scheduled for</h3>
                 <p>@TempData["ApptDate"]</p>
             }
         </div>
