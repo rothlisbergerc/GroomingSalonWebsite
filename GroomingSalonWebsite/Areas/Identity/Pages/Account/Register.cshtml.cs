@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using GroomingSalonWebsite.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -24,17 +25,20 @@ namespace GroomingSalonWebsite.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly SalonContext _context;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            SalonContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _context = context;
         }
 
         [BindProperty]
@@ -68,11 +72,6 @@ namespace GroomingSalonWebsite.Areas.Identity.Pages.Account
             [DataType(DataType.EmailAddress)]
             public string AccountEmail { get; set; }
 
-            [Required(ErrorMessage = "A username is needed to associate with your account.")]
-            [DisplayName("Username")]
-            [StringLength(16, MinimumLength = 6)]
-            public string AccountName { get; set; }
-
             [Required(ErrorMessage = "An 8 letter password is required.")]
             [DisplayName("Password")]
             [DataType(DataType.Password)]
@@ -99,11 +98,12 @@ namespace GroomingSalonWebsite.Areas.Identity.Pages.Account
             {
                 var user = new IdentityUser { UserName = Input.AccountEmail, Email = Input.AccountEmail };
                 var result = await _userManager.CreateAsync(user, Input.AccountPassword);
-                var acc = new Models.Account { Input = user };
+                var acc = new Models.Account {AccountFirstName = Input.AccountFirstName, AccountLastName = Input.AccountLastName,
+                    AccountPhoneNumber = Input.AccountPhoneNumber,Input = user };
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
+                    await SalonDB.addNewAccount(_context, acc);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
