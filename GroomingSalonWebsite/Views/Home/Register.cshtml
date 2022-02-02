@@ -11,7 +11,7 @@
     </div>
     <form asp-action="Register" class="row g-3">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="col-md-6">
+        @*<div class="col-md-6">
             <label asp-for="AccountEmail" class="control-label">Email</label>
             <input asp-for="AccountEmail" class="form-control" />
             <div id="errorSpan" class="font-weight-bold">
@@ -39,7 +39,7 @@
             <div id="errorSpan" class="font-weight-bold">
                 <span asp-validation-for="AccountName" class="text-danger"></span>
             </div>
-        </div>
+        </div>*@
         <div class="col-md-6">
             <label asp-for="AccountPhoneNumber" class="control-label">Phone Number</label>
             <input asp-for="AccountPhoneNumber" class="form-control" />
