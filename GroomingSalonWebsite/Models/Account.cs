@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -28,6 +29,9 @@ namespace GroomingSalonWebsite.Models
         [StringLength(10,MinimumLength = 10)]
         public string AccountPhoneNumber { get; set; }
 
+        public IdentityUser Input { get; set; }
+
+        /*Removing these parts of the class because Identity has a better usage of them.
         [Required(ErrorMessage = "Need your email as alternative to login")]
         [DisplayName("Email Address")]
         [DataType(DataType.EmailAddress)]
@@ -42,7 +46,7 @@ namespace GroomingSalonWebsite.Models
         [DisplayName("Password")]
         [DataType(DataType.Password)]
         [StringLength(32,MinimumLength = 8)]
-        public string AccountPassword { get; set; }
+        public string AccountPassword { get; set; }*/
     }
 }
     

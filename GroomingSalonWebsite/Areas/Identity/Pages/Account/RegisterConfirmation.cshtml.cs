@@ -21,7 +21,7 @@ namespace GroomingSalonWebsite.Areas.Identity.Pages.Account
             _sender = sender;
         }
 
-        public string Email { get; set; }
+        //public string Email { get; set; } only used in line 43? Useless?
 
         public bool DisplayConfirmAccountLink { get; set; }
 
@@ -40,7 +40,7 @@ namespace GroomingSalonWebsite.Areas.Identity.Pages.Account
                 return NotFound($"Unable to load user with email '{email}'.");
             }
 
-            Email = email;
+            //Email = email;
             // Once you add a real email sender, you should remove this code that lets you confirm the account
             DisplayConfirmAccountLink = true;
             if (DisplayConfirmAccountLink)
