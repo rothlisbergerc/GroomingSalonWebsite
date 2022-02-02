@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -39,43 +40,66 @@ namespace GroomingSalonWebsite.Areas.Identity.Pages.Account
         [BindProperty]
         public InputModel Input { get; set; }
 
-        public string ReturnUrl { get; set; }
+        //public string ReturnUrl { get; set; }
 
-        public IList<AuthenticationScheme> ExternalLogins { get; set; }
+        //public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
-            [Display(Name = "Email")]
-            public string Email { get; set; }
+            [Required(ErrorMessage = "Need to associate full name with account.")]
+            [DisplayName("First Name")]
+            [RegularExpression(@"^[a-zA-Z'\s]*$", ErrorMessage = "Can only consist of letters and have at least 2")]
+            [StringLength(20, MinimumLength = 2)]
+            public string AccountFirstName { get; set; }
+            [Required(ErrorMessage = "Need to associate full name with account.")]
+            [DisplayName("Last Name")]
+            [RegularExpression(@"^[a-zA-Z'\s]*$", ErrorMessage = "Can only consist of letters and have at least 2")]
+            [StringLength(20, MinimumLength = 2)]
+            public string AccountLastName { get; set; }
+            [Required(ErrorMessage = "Need to associate phone with account.")]
+            [DisplayName("Phone Number")]
+            [Phone]
+            [RegularExpression(@"^\d+$", ErrorMessage = "Please enter numbers only")]
+            [StringLength(10, MinimumLength = 10)]
+            public string AccountPhoneNumber { get; set; }
 
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [Required(ErrorMessage = "Need your email as alternative to login")]
+            [DisplayName("Email Address")]
+            [DataType(DataType.EmailAddress)]
+            public string AccountEmail { get; set; }
+
+            [Required(ErrorMessage = "A username is needed to associate with your account.")]
+            [DisplayName("Username")]
+            [StringLength(16, MinimumLength = 6)]
+            public string AccountName { get; set; }
+
+            [Required(ErrorMessage = "An 8 letter password is required.")]
+            [DisplayName("Password")]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
-            public string Password { get; set; }
+            [StringLength(32, MinimumLength = 8)]
+            public string AccountPassword { get; set; }
 
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("AccountPassword", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
         }
 
-        public async Task OnGetAsync(string returnUrl = null)
+        public void OnGet()//string returnUrl = null)
         {
-            ReturnUrl = returnUrl;
-            ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            //ReturnUrl = returnUrl;
+            //ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl = returnUrl ?? Url.Content("~/");
-            ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            //returnUrl = returnUrl ?? Url.Content("~/");
+            //ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
-                var result = await _userManager.CreateAsync(user, Input.Password);
+                var user = new IdentityUser { UserName = Input.AccountEmail, Email = Input.AccountEmail };
+                var result = await _userManager.CreateAsync(user, Input.AccountPassword);
+                var acc = new Models.Account { Input = user };
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
@@ -88,12 +112,12 @@ namespace GroomingSalonWebsite.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                   // await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                     //   $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        return RedirectToPage("RegisterConfirmation", new { email = Input.AccountEmail, returnUrl = returnUrl });
                     }
                     else
                     {

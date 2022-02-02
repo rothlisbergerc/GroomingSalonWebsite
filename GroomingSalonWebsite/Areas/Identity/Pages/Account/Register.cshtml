@@ -6,31 +6,59 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<div class="row">
+<div class="row" id="container">
     <div class="col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <form method="post" class="row g-3">
             <h4>Create a new account.</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            <div class="col-md-6">
+                <label asp-for="Input.AccountEmail"></label>
+                <input asp-for="Input.AccountEmail" class="form-control" />
+                <span asp-validation-for="Input.AccountEmail" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            <div class="col-md-6">
+                <label asp-for="Input.AccountPassword"></label>
+                <input asp-for="Input.AccountPassword" class="form-control" />
+                <span asp-validation-for="Input.AccountPassword" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-6">
                 <label asp-for="Input.ConfirmPassword"></label>
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <div class="col-md-6">
+                <label asp-for="Input.AccountPhoneNumber" class="control-label">Phone Number</label>
+                <input asp-for="Input.AccountPhoneNumber" class="form-control" />
+                <div id="errorSpan" class="font-weight-bold">
+                    <span asp-validation-for="Input.AccountPhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Input.AccountFirstName" class="control-label">First Name</label>
+                <input asp-for="Input.AccountFirstName" class="form-control" />
+                <div id="errorSpan" class="font-weight-bold">
+                    <span asp-validation-for="Input.AccountFirstName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Input.AccountLastName" class="control-label">Last Name</label>
+                <input asp-for="Input.AccountLastName" class="form-control" />
+                <div id="errorSpan" class="font-weight-bold">
+                    <span asp-validation-for="Input.AccountLastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="align-content-lg-stretch">
+                <div class="col">
+                    <br />
+                    <h6>Select:</h6>
+                    <button type="submit" class="btn btn-info">Create Account</button>
+                    <button type="reset" class="btn btn-danger">Clear</button>
+                </div>
+            </div>
         </form>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+    @*<div class="col-md-6 col-md-offset-2">
         <section>
             <h4>Use another service to register.</h4>
             <hr />
@@ -59,7 +87,7 @@
                 }
             }
         </section>
-    </div>
+    </div>*@
 </div>
 
 @section Scripts {
