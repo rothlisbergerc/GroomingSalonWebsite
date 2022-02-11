@@ -28,7 +28,7 @@ namespace GroomingSalonWebsite.Models
             }
         }
 
-        //Don't need a default user to be an admin as we can just override it manually.
+        //Removed because the class is not needed and creates a flaw by providing a free admin class
         /*public static async Task CreateDefaultUser(IServiceProvider provider, string role)
         {
             var userManager = provider.GetService<UserManager<IdentityUser>>();
