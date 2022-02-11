@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using GroomingSalonWebsite.Data;
+using GroomingSalonWebsite.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -103,6 +104,10 @@ namespace GroomingSalonWebsite.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    //Adds basic user to role
+                    await _userManager.AddToRoleAsync(user, RoleHelper.User);
+
                     await SalonDB.addNewAccount(_context, acc);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

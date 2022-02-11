@@ -1,4 +1,5 @@
 using GroomingSalonWebsite.Data;
+using GroomingSalonWebsite.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,7 @@ namespace GroomingSalonWebsite
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<SalonContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -65,6 +67,14 @@ namespace GroomingSalonWebsite
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            var serviceProvider = app.ApplicationServices.GetRequiredService<IServiceProvider>().CreateScope();
+            //Create default roles
+            //Added discard because I had problems making it async
+            _ = RoleHelper.CreateRoles(serviceProvider.ServiceProvider, RoleHelper.User, RoleHelper.Admin);
+            //Create default admin
+            //Removed because it won't be necessary because we can override admins.
+            //_ = RoleHelper.CreateDefaultUser(serviceProvider.ServiceProvider, RoleHelper.Admin);
         }
     }
 }
