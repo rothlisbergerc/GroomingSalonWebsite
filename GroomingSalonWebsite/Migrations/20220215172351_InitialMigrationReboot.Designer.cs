@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroomingSalonWebsite.Migrations
 {
     [DbContext(typeof(SalonContext))]
-    [Migration("20220215030511_rescheduleModel")]
-    partial class rescheduleModel
+    [Migration("20220215172351_InitialMigrationReboot")]
+    partial class InitialMigrationReboot
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
