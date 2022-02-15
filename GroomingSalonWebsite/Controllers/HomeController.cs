@@ -111,7 +111,7 @@ namespace GroomingSalonWebsite.Controllers
             }
             return View(appt);
         }
-
+        /*
         public IActionResult Login()
         {
             return View();
@@ -130,6 +130,6 @@ namespace GroomingSalonWebsite.Controllers
                 return RedirectToAction("Login");
             }
             return View(acc);
-        }
+        }*/
     }
 }
