@@ -1,5 +1,5 @@
 ﻿@*Allows user to retrieve and update their appointment information by entering the phone number associated with their account*@
-@model GroomingSalonWebsite.Models.Appointment
+@model GroomingSalonWebsite.Models.Reschedule
 
 @{
     ViewData["Title"] = "Reschedule";
@@ -17,9 +17,9 @@
                 <form asp-action="Reschedule">
             
                     <div class="form-group">
-                        <label asp-for="ApptPhoneNumber" class="control-label">Phone number</label>
-                        <input asp-for="ApptPhoneNumber" class="form-control" />
-                        <span asp-validation-for="ApptPhoneNumber" class="text-danger"></span>               
+                        <label asp-for="Appointment.ApptPhoneNumber" class="control-label">Phone number</label>
+                        <input asp-for="Appointment.ApptPhoneNumber" class="form-control" />
+                        <span asp-validation-for="Appointment.ApptPhoneNumber" class="text-danger"></span>               
                     </div>
 
                     <button type="submit" class="btn btn-info">Submit</button>

@@ -48,13 +48,14 @@ namespace GroomingSalonWebsite.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Reschedule(Appointment appointment)
+        public IActionResult Reschedule(Reschedule reschedule)
         {
+            reschedule.Appointment = (from appoint in _context.Appointment where appoint.ApptPhoneNumber == reschedule.Appointment.ApptPhoneNumber select appoint).FirstOrDefault();
             //Returning first customer in the list to test out.
-            Appointment appt = (Appointment)(from appoint in _context.Appointment where appoint.ApptPhoneNumber == appointment.ApptPhoneNumber select appoint).FirstOrDefault();
-            if (appt != null)
+            //Appointment appt = (Appointment)(from appoint in _context.Appointment where appoint.ApptPhoneNumber == appointment.ApptPhoneNumber select appoint).FirstOrDefault();
+            if (reschedule.Appointment != null)
             {
-                TempData["ApptDate"] = appt.ApptDate;
+                TempData["ApptDate"] = reschedule.Appointment.ApptDate;
             }
             return View();
         }
