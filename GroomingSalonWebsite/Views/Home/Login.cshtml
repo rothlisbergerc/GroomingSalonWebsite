@@ -1,29 +1,31 @@
-﻿@model GroomingSalonWebsite.Models.Account
+﻿@*A form that collects user information for the purpose of registering an appointment*@
+@model GroomingSalonWebsite.Models.Account
 
 @{
     ViewData["Title"] = "Login";
 }
 
-<div id="container">
+<div id=container>
     <div class="text-center">
         <h1 class="display-4">Log in to your Account</h1>
     </div>
+
     <form asp-action="add" class="row g-3">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         @*<div class="col-md-6">
-            <label asp-for="AccountEmail" class="control-label">Email</label>
-            <input asp-for="AccountEmail" class="form-control" />
-            <div id="errorSpan" class="font-weight-bold">
-                <span asp-validation-for="AccountEmail" class="text-danger"></span>
+                <label asp-for="AccountEmail" class="control-label">Email</label>
+                <input asp-for="AccountEmail" class="form-control" />
+                <div id="errorSpan" class="font-weight-bold">
+                    <span asp-validation-for="AccountEmail" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <label asp-for="AccountPassword" class="control-label">Password</label>
-            <input asp-for="AccountPassword" class="form-control" />
-            <div id="errorSpan" class="font-weight-bold">
-                <span asp-validation-for="AccountPassword" class="text-danger"></span>
-            </div>
-        </div>*@
+            <div class="col-md-6">
+                <label asp-for="AccountPassword" class="control-label">Password</label>
+                <input asp-for="AccountPassword" class="form-control" />
+                <div id="errorSpan" class="font-weight-bold">
+                    <span asp-validation-for="AccountPassword" class="text-danger"></span>
+                </div>
+            </div>*@
         <div class="align-content-lg-stretch">
             <div class="col">
                 <br />
