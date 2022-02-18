@@ -3,10 +3,49 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GroomingSalonWebsite.Migrations
 {
-    public partial class AddingIdentity : Migration
+    public partial class InitialMigrationReboot : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "About",
+                columns: table => new
+                {
+                    aboutId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    aboutText = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_About", x => x.aboutId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Appointment",
+                columns: table => new
+                {
+                    AppointmentId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ApptFirstName = table.Column<string>(maxLength: 20, nullable: false),
+                    ApptLastName = table.Column<string>(maxLength: 20, nullable: false),
+                    ApptPetName = table.Column<string>(nullable: false),
+                    ApptPetBreed = table.Column<string>(maxLength: 20, nullable: false),
+                    ApptPetBirthDay = table.Column<DateTime>(nullable: false),
+                    ApptPetWeight = table.Column<int>(nullable: false),
+                    ApptPhoneNumber = table.Column<string>(maxLength: 10, nullable: false),
+                    ApptAddress1 = table.Column<string>(nullable: false),
+                    ApptAddress2 = table.Column<string>(nullable: true),
+                    ApptCity = table.Column<string>(nullable: false),
+                    ApptState = table.Column<string>(nullable: false),
+                    ApptZipcode = table.Column<string>(maxLength: 5, nullable: false),
+                    ApptServices = table.Column<string>(nullable: false),
+                    ApptDate = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Appointment", x => x.AppointmentId);
+                });
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -47,6 +86,54 @@ namespace GroomingSalonWebsite.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ContactUs",
+                columns: table => new
+                {
+                    messageId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(nullable: false),
+                    email = table.Column<string>(nullable: false),
+                    subject = table.Column<string>(nullable: false),
+                    message = table.Column<string>(nullable: false),
+                    hearabout = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ContactUs", x => x.messageId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Customers",
+                columns: table => new
+                {
+                    CustomerId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: true),
+                    HomeAddress = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.CustomerId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Pets",
+                columns: table => new
+                {
+                    PetId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    Breed = table.Column<string>(nullable: true),
+                    Age = table.Column<float>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pets", x => x.PetId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -65,6 +152,28 @@ namespace GroomingSalonWebsite.Migrations
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Accounts",
+                columns: table => new
+                {
+                    AccountId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AccountFirstName = table.Column<string>(maxLength: 20, nullable: false),
+                    AccountLastName = table.Column<string>(maxLength: 20, nullable: false),
+                    AccountPhoneNumber = table.Column<string>(maxLength: 10, nullable: false),
+                    InputId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Accounts", x => x.AccountId);
+                    table.ForeignKey(
+                        name: "FK_Accounts_AspNetUsers_InputId",
+                        column: x => x.InputId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -153,6 +262,11 @@ namespace GroomingSalonWebsite.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Accounts_InputId",
+                table: "Accounts",
+                column: "InputId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
                 column: "RoleId");
@@ -195,6 +309,15 @@ namespace GroomingSalonWebsite.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "About");
+
+            migrationBuilder.DropTable(
+                name: "Accounts");
+
+            migrationBuilder.DropTable(
+                name: "Appointment");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -208,6 +331,15 @@ namespace GroomingSalonWebsite.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "ContactUs");
+
+            migrationBuilder.DropTable(
+                name: "Customers");
+
+            migrationBuilder.DropTable(
+                name: "Pets");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

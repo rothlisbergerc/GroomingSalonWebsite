@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroomingSalonWebsite.Migrations
 {
     [DbContext(typeof(SalonContext))]
-    [Migration("20220125195526_AddingIdentity")]
-    partial class AddingIdentity
+    [Migration("20220215172351_InitialMigrationReboot")]
+    partial class InitialMigrationReboot
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,10 +43,6 @@ namespace GroomingSalonWebsite.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AccountEmail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("AccountFirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(20)")
@@ -57,22 +53,17 @@ namespace GroomingSalonWebsite.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<string>("AccountName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(16)")
-                        .HasMaxLength(16);
-
-                    b.Property<string>("AccountPassword")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(32)")
-                        .HasMaxLength(32);
-
                     b.Property<string>("AccountPhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
 
+                    b.Property<string>("InputId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("AccountId");
+
+                    b.HasIndex("InputId");
 
                     b.ToTable("Accounts");
                 });
@@ -421,6 +412,13 @@ namespace GroomingSalonWebsite.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("GroomingSalonWebsite.Models.Account", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Input")
+                        .WithMany()
+                        .HasForeignKey("InputId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
