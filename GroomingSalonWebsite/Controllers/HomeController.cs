@@ -50,9 +50,9 @@ namespace GroomingSalonWebsite.Controllers
         [HttpPost]
         public IActionResult Reschedule(Reschedule reschedule)
         {
-            reschedule.Appointment = (from appoint in _context.Appointment where appoint.ApptPhoneNumber == reschedule.Appointment.ApptPhoneNumber select appoint).FirstOrDefault();
             //Returning first customer in the list to test out.
-            //Appointment appt = (Appointment)(from appoint in _context.Appointment where appoint.ApptPhoneNumber == appointment.ApptPhoneNumber select appoint).FirstOrDefault();
+            reschedule.Appointment = (from appoint in _context.Appointment where appoint.ApptPhoneNumber == reschedule.Appointment.ApptPhoneNumber select appoint).FirstOrDefault();
+            reschedule.popUpConfirm = true;
             if (reschedule.Appointment != null)
             {
                 TempData["ApptDate"] = reschedule.Appointment.ApptDate;
