@@ -117,5 +117,12 @@ namespace GroomingSalonWebsite.Data
                                      select acc).SingleAsync();
             return userAcc;
         }
+
+        public static async Task<Reschedule> addRescheduleAsync(SalonContext _context, Reschedule r)
+        {
+            _context.Reschedules.Add(r);
+            await _context.SaveChangesAsync();
+            return r;
+        }
     }
 }
