@@ -52,7 +52,7 @@ namespace GroomingSalonWebsite.Controllers
         {
             //Returning first customer in the list to test out.
             reschedule.Appointment = (from appoint in _context.Appointment where appoint.ApptPhoneNumber == reschedule.Appointment.ApptPhoneNumber select appoint).FirstOrDefault();
-            reschedule.popUpConfirm = true;
+            reschedule.Confirmation = true;
             if (reschedule.Appointment != null)
             {
                 TempData["ApptDate"] = reschedule.Appointment.ApptDate;

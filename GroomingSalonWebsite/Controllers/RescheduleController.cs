@@ -19,7 +19,9 @@ namespace GroomingSalonWebsite.Controllers
         [HttpGet]
         public IActionResult RescheduleCancel()
         {
-            //Reschedule resched = (from resched in _context. where appoint.ApptPhoneNumber == TempData["ApptDate"] select appoint).FirstOrDefault();
+            Reschedule rescheduled = (from resched in _context.Reschedules where resched.Confirmation == true select resched).FirstOrDefault();
+            TempData["ApptDate"] = rescheduled.Appointment.ApptDate;
+            rescheduled.Confirmation = false;
             return View();
         }
     }
