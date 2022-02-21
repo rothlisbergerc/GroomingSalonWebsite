@@ -1,6 +1,7 @@
 ﻿using GroomingSalonWebsite.Data;
 using GroomingSalonWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace GroomingSalonWebsite.Controllers
         [HttpGet]
         public IActionResult RescheduleCancel()
         {
-            Reschedule rescheduled = (from resched in _context.Reschedules where resched.Confirmation == true select resched).FirstOrDefault();
+            Reschedule rescheduled = (from resched in _context.Reschedules where resched.Confirmation == true select resched).Include(nameof(Appointment)).FirstOrDefault();
             TempData["ApptDate"] = rescheduled.Appointment.ApptDate;
             rescheduled.Confirmation = false;
             return View();

@@ -53,11 +53,13 @@ namespace GroomingSalonWebsite.Controllers
             //Returning first customer in the list to test out.
             reschedule.Appointment = (from appoint in _context.Appointment where appoint.ApptPhoneNumber == reschedule.Appointment.ApptPhoneNumber select appoint).FirstOrDefault();
             reschedule.Confirmation = true;
+            //Clears out errors from the modelstate so that it actually will validate.
+            ModelState.Clear();
             if (ModelState.IsValid)
             {
                 await SalonDB.addRescheduleAsync(_context, reschedule);
-                return RedirectToAction("Index");
             }
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
             if (reschedule.Appointment != null)
             {
                 TempData["ApptDate"] = reschedule.Appointment.ApptDate;

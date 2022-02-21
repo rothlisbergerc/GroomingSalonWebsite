@@ -11,16 +11,6 @@
             <p>Reschedule, update, or cancel your appointment</p>
         </div>
         <hr />
-
-        <div class="row">
-            <div class="col-md-4">
-                <form asp-action="Reschedule">
-
-                    <button type="submit" class="btn btn-info">Submit</button>
-                </form>
-            </div>
-        </div>
-
         <div class="text-center">
                 <h3>Your appointment is currently scheduled for</h3>
                 <p>@TempData["ApptDate"]</p>
@@ -29,7 +19,6 @@
         <div class="row">
             <div class="col-md-4">
                 <form asp-action="Reschedule">
-                    @*Buttons disabled until appointment information has been found*@
                     <div>
                         <h2>Do you wish to cancel your appointment scheduled?</h2>
                         <button type="button" name="YesCancel" class="btn btn-danger">Yes</button>
