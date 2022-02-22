@@ -37,11 +37,44 @@ namespace GroomingSalonWebsite.Controllers
                 //Erasing out the appointment if the user selects yes.
                 Appointment ap = await SalonDB.getAppointmentAsync(_context, rescheduled.Appointment.AppointmentId);
                 _context.Entry(ap).State = EntityState.Deleted;
+                _context.Entry(rescheduled).State = EntityState.Deleted;
                 await _context.SaveChangesAsync();
                 TempData["ApptDate"] = "You have successfully cancelled this appointment.";
             }
             //Turns the user back to the reschedule page
-            if(cancelButton == "No")
+            if (cancelButton == "No")
+            {
+                return RedirectToAction("Reschedule", "Home");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult RescheduleResched()
+        {
+            Reschedule rescheduled = (from resched in _context.Reschedules where resched.Confirmation == true select resched).Include(nameof(Appointment)).FirstOrDefault();
+            TempData["ApptDate"] = rescheduled.Appointment.ApptDate;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RescheduleReschedAsync(Reschedule newerDate)
+        {
+            Reschedule rescheduled = (from resched in _context.Reschedules where resched.Confirmation == true select resched).Include(nameof(Appointment)).FirstOrDefault();
+            //Changing it back to false no matter what the user decides.
+            rescheduled.Confirmation = false;
+            //Ensuring that the user enters a valid updated appointment date.
+            ModelState.Clear();
+            if (ModelState.IsValid && newerDate.Appointment.ApptDate > rescheduled.Appointment.ApptDate)
+            {
+                rescheduled.Appointment.ApptDate = newerDate.Appointment.ApptDate;
+                _context.Entry(rescheduled.Appointment).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+                //Editing slight tempdata so that the information is available to see the update.
+                TempData["Rescheduled"] = "Good";
+                TempData["ApptDate"] = "Great! Your appointment is set for " + newerDate.Appointment.ApptDate + " !";
+            }
+            else
             {
                 return RedirectToAction("Reschedule", "Home");
             }
