@@ -1,0 +1,30 @@
+﻿@model GroomingSalonWebsite.Models.Reschedule
+
+@{
+    ViewData["Title"] = "RescheduleCancel";
+}
+<body>
+    <div id="container">
+        <div class="text-center">
+            <h1 class="display-4">Need to make a change?</h1>
+            <p>Reschedule, update, or cancel your appointment</p>
+        </div>
+        <hr />
+        <div class="text-center">
+                <h3>Your appointment is currently scheduled for</h3>
+                <p>@TempData["ApptDate"]</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="RescheduleCancel">
+                    <div>
+                        <h2>Do you wish to cancel your appointment scheduled?</h2>
+                        <button type="submit" name="cancelButton" value="Yes"class="btn btn-danger">Yes</button>
+                        <button type="submit" name="cancelButton" value="No" class="btn btn-light">No</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

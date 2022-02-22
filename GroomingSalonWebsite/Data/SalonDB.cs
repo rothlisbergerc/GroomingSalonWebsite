@@ -68,7 +68,7 @@ namespace GroomingSalonWebsite.Data
             return ap;
         }
         //Same as customer and pet where it will return a singular appointment instead of the whole list.
-        public static async Task<Appointment> getAppointmnetAsync(SalonContext _context, int appointmentId)
+        public static async Task<Appointment> getAppointmentAsync(SalonContext _context, int appointmentId)
         {
             Appointment ap = await (from appointments in _context.Appointment
                                     where appointments.AppointmentId == appointmentId
@@ -116,6 +116,13 @@ namespace GroomingSalonWebsite.Data
                                      where acc.AccountId == accId
                                      select acc).SingleAsync();
             return userAcc;
+        }
+
+        public static async Task<Reschedule> addRescheduleAsync(SalonContext _context, Reschedule r)
+        {
+            _context.Reschedules.Add(r);
+            await _context.SaveChangesAsync();
+            return r;
         }
     }
 }

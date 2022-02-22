@@ -25,5 +25,7 @@ namespace GroomingSalonWebsite.Data
         public DbSet<Appointment> Appointment { get; set; }
 
         public DbSet<Account> Accounts { get; set; }
+
+        public DbSet<Reschedule> Reschedules { get; set; }
     }
 }

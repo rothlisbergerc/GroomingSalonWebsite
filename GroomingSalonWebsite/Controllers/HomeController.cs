@@ -48,11 +48,18 @@ namespace GroomingSalonWebsite.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Reschedule(Reschedule reschedule)
+        public async Task<IActionResult> Reschedule(Reschedule reschedule)
         {
-            reschedule.Appointment = (from appoint in _context.Appointment where appoint.ApptPhoneNumber == reschedule.Appointment.ApptPhoneNumber select appoint).FirstOrDefault();
             //Returning first customer in the list to test out.
-            //Appointment appt = (Appointment)(from appoint in _context.Appointment where appoint.ApptPhoneNumber == appointment.ApptPhoneNumber select appoint).FirstOrDefault();
+            reschedule.Appointment = (from appoint in _context.Appointment where appoint.ApptPhoneNumber == reschedule.Appointment.ApptPhoneNumber select appoint).FirstOrDefault();
+            reschedule.Confirmation = true;
+            //Clears out errors from the modelstate so that it actually will validate.
+            ModelState.Clear();
+            if (ModelState.IsValid)
+            {
+                await SalonDB.addRescheduleAsync(_context, reschedule);
+            }
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
             if (reschedule.Appointment != null)
             {
                 TempData["ApptDate"] = reschedule.Appointment.ApptDate;
