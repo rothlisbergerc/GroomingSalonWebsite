@@ -80,5 +80,51 @@ namespace GroomingSalonWebsite.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public IActionResult RescheduleUpdate()
+        {
+            Reschedule rescheduled = (from resched in _context.Reschedules where resched.Confirmation == true select resched).Include(nameof(Appointment)).FirstOrDefault();
+            return View(rescheduled.Appointment);
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> RescheduleUpdateAsync(Appointment appt)
+        {
+            Reschedule rescheduled = (from resched in _context.Reschedules where resched.Confirmation == true select resched).Include(nameof(Appointment)).FirstOrDefault();
+            //Changing it back to false no matter what the user decides.
+            rescheduled.Confirmation = false;
+            ModelState.Clear();
+            if(ModelState.IsValid && appt != null)
+            {
+                Exchange(appt, rescheduled);
+                _context.Entry(rescheduled.Appointment).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+                TempData["Rescheduled"] = "Good";
+                TempData["ApptDate"] = "You have successfully updated your appointment";
+            }
+            else
+            {
+                return RedirectToAction("Reschedule", "Home");
+            }
+            return View();
+        }
+
+        public void Exchange(Appointment a1, Reschedule r1)
+        {
+            r1.Appointment.ApptAddress1 = a1.ApptAddress1;
+            r1.Appointment.ApptAddress2 = a1.ApptAddress2;
+            r1.Appointment.ApptCity = a1.ApptCity;
+            r1.Appointment.ApptFirstName = a1.ApptFirstName;
+            r1.Appointment.ApptLastName = a1.ApptLastName;
+            r1.Appointment.ApptPetBirthDay = a1.ApptPetBirthDay;
+            r1.Appointment.ApptPetBreed = a1.ApptPetBreed;
+            r1.Appointment.ApptPetName = a1.ApptPetName;
+            r1.Appointment.ApptPetWeight = a1.ApptPetWeight;
+            r1.Appointment.ApptPhoneNumber = a1.ApptPhoneNumber;
+            r1.Appointment.ApptServices = a1.ApptServices;
+            r1.Appointment.ApptState = a1.ApptState;
+            r1.Appointment.ApptZipcode = a1.ApptZipcode;
+        }
     }
 }
