@@ -18,11 +18,11 @@
 
         <div class="row">
             <div class="col-md-4">
-                <form asp-action="Reschedule">
+                <form asp-action="RescheduleCancel">
                     <div>
                         <h2>Do you wish to cancel your appointment scheduled?</h2>
-                        <button type="button" name="YesCancel" class="btn btn-danger">Yes</button>
-                        <button type="button" name="NoCancel" class="btn btn-light">No</button>
+                        <button type="submit" name="cancelButton" value="Yes"class="btn btn-danger">Yes</button>
+                        <button type="submit" name="cancelButton" value="No" class="btn btn-light">No</button>
                     </div>
                 </form>
             </div>

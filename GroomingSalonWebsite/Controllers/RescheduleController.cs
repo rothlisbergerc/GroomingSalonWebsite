@@ -22,7 +22,29 @@ namespace GroomingSalonWebsite.Controllers
         {
             Reschedule rescheduled = (from resched in _context.Reschedules where resched.Confirmation == true select resched).Include(nameof(Appointment)).FirstOrDefault();
             TempData["ApptDate"] = rescheduled.Appointment.ApptDate;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RescheduleCancelAsync(string cancelButton)
+        {
+            Reschedule rescheduled = (from resched in _context.Reschedules where resched.Confirmation == true select resched).Include(nameof(Appointment)).FirstOrDefault();
+            //Changing it back to false no matter what the user decides.
             rescheduled.Confirmation = false;
+            //Catches the user incase they push yes after submitting the initial cancellation.
+            if (cancelButton == "Yes" && rescheduled != null)
+            {
+                //Erasing out the appointment if the user selects yes.
+                Appointment ap = await SalonDB.getAppointmentAsync(_context, rescheduled.Appointment.AppointmentId);
+                _context.Entry(ap).State = EntityState.Deleted;
+                await _context.SaveChangesAsync();
+                TempData["ApptDate"] = "You have successfully cancelled this appointment.";
+            }
+            //Turns the user back to the reschedule page
+            if(cancelButton == "No")
+            {
+                return RedirectToAction("Reschedule", "Home");
+            }
             return View();
         }
     }
