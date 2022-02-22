@@ -56,7 +56,7 @@
                         else
                         {
                             <button type="button" name="Resched" onclick="@("window.location.href='" + @Url.Action("RescheduleResched", "Reschedule") + "'");" class="btn btn-info">Reschedule</button>
-                            <button type="button" name="Update" class="btn btn-secondary">Update</button>
+                            <button type="button" name="Update" onclick="@("window.location.href='" + @Url.Action("RescheduleUpdate", "Reschedule") + "'");" class="btn btn-secondary">Update</button>
                             <button type="button" name="Cancel" onclick="@("window.location.href='" + @Url.Action("RescheduleCancel", "Reschedule") + "'");" class="btn btn-danger">Cancel</button>
                         }
                     </div>
